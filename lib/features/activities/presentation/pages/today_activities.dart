@@ -1,14 +1,35 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
+import 'package:news_app/core/custom_icons.dart';
 import 'package:news_app/core/utils.dart';
+import 'package:news_app/features/activities/presentation/widgets/today_activities/activities_list.dart';
 import 'package:news_app/features/activities/presentation/widgets/today_activities/category_selector.dart';
 import 'package:news_app/features/activities/presentation/widgets/today_activities/goal_card.dart';
-import 'package:news_app/features/common/presentation/widgets/common_button.dart';
+import 'package:news_app/features/common/presentation/widgets/custom_icon_button.dart';
+import 'package:news_app/features/common/presentation/widgets/custom_svg_icon.dart';
 import 'package:news_app/features/common/presentation/widgets/custom_text_field.dart';
+import 'package:news_app/features/common/presentation/widgets/general_image.dart';
+import 'package:news_app/features/common/presentation/widgets/h_spacing.dart';
 import 'package:news_app/features/common/presentation/widgets/scaffold_wrapper.dart';
 import 'package:news_app/features/common/presentation/widgets/v_spacing.dart';
 
-class TodayActivities extends StatelessWidget {
+class TodayActivities extends StatefulWidget {
+
   const TodayActivities({super.key});
+
+  @override
+  State<TodayActivities> createState() => _TodayActivitiesState();
+}
+
+class _TodayActivitiesState extends State<TodayActivities> {
+  late ScrollController scrollController; 
+
+  @override
+  void initState() {
+    super.initState();
+    scrollController = ScrollController();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -16,32 +37,39 @@ class TodayActivities extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            VSpacing(5),
+            VSpacing(Platform.isAndroid ? 5 : 7),
             Container(
               padding: EdgeInsets.symmetric(
                 horizontal: mqWidth(context, 5)
               ),
               child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text("Tues, Nov 12", style: TextStyle(
                     fontFamily: "SFProDisplay",
-                    fontWeight: FontWeight.w500
+                    fontWeight: FontWeight.w500,
+                    color: Color(0xffADB5BD)
                   ),),
                   Row(
                     children: [
-                      Icon(Icons.notification_add),
-                      /* GeneralImage(
-                        width: mqWidth(context, 3),
-                        height: mqWidth(context, 3),
-                        url: "",
-                        fromLocal: false,
-                      ) */
+                      CustomSVGIcon(
+                        path: CustomIcons.bellIcon
+                      ),
+                      HSpacing(2),
+                      GeneralImage(
+                        width: mqWidth(context, 6),
+                        height: mqWidth(context, 6),
+                        fit: BoxFit.cover,
+                        borderRadius: 300,
+                        url: "assets/images/girl.jpg",
+                        fromLocal: true,
+                      )
                     ],
                   )
                 ],
               ),
             ),
-            VSpacing(1),
+            VSpacing(0.5),
             Container(
               padding: EdgeInsets.symmetric(
                 horizontal: mqWidth(context, 5)
@@ -50,154 +78,95 @@ class TodayActivities extends StatelessWidget {
                 children: [
                   Text("This week in Estepona", style: TextStyle(
                     fontSize: 24,
-                    fontWeight: FontWeight.w600
+                    fontWeight: FontWeight.w500
                   )),
                 ],
               ),
             ),
-            VSpacing(3),
+            VSpacing(2),
             GoalCard(),
             VSpacing(2),
             CustomTextField(
               hintText: "What do you feel like doing", 
               label: "",
               widthPer: 90,
+              fillColor: Colors.white,
+              suffixIcon: Padding(
+                padding: EdgeInsets.only(
+                  top: mqWidth(context, 2),
+                  bottom: mqWidth(context, 2),
+                  right: mqWidth(context, 4),
+                ),
+                child: CustomSVGIcon(
+                  path: CustomIcons.searchIcon
+                ),
+              ),
             ),
             VSpacing(2),
             CategorySelector(),
             VSpacing(3),
-            Container(
-              padding: EdgeInsets.symmetric(
-                horizontal: mqWidth(context, 5)
-              ),
-              child: Row(
-                children: [
-                  Container(
-                    width: mqWidth(context, 5),
-                    height: mqHeigth(context, 20),
-                  ),
-                  Container(
-                    width: mqWidth(context, 85),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text.rich(TextSpan(
-                          children: [
-                            TextSpan(
-                              text: "Today",
-                              style: TextStyle(
-                                fontSize: 18
-                              )
-                            ),
-                            TextSpan(
-                              text: "/ tuesday",
-                              style: TextStyle(
-                                color: Color(0xff9E9E9E)
-                              )
-                            )
-                          ]
-                        )),
-                        VSpacing(1.5),
-                        Container(
-                          width: mqWidth(context, 85),
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10),
-                            color: Colors.white,
-                            boxShadow: [
-                              BoxShadow(
-                                color: Colors.black26,
-                                offset: Offset(3, 3),
-                                blurRadius: 10
-                              )
-                            ]
-                          ),
-                          child: Row(
-                            children: [
-                              Container(
-                                width: mqWidth(context, 65),
-                                padding: EdgeInsets.only(
-                                  left: mqWidth(context, 5),
-                                  top: mqHeigth(context, 2),
-                                  bottom: mqHeigth(context, 2)
-                                ),
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text.rich(TextSpan(
-                                      children: [
-                                        TextSpan(
-                                          text: "09:00"
-                                        ),
-                                        TextSpan(
-                                          text: " (60 min)"
-                                        )
-                                      ]
-                                    )),
-                                    VSpacing(1),
-                                    Text("Beach Yoga"),
-                                    VSpacing(1),
-                                    Row(
-                                      children: [
-                                        Icon(Icons.location_city),
-                                        Text("La Playa de la Rada")
-                                      ],
-                                    ),
-                                    VSpacing(1),
-                                    Row(
-                                      children: [
-                                        Container(
-                                          width: mqWidth(context, 30),
-                                          decoration: BoxDecoration(
-                                            borderRadius: BorderRadius.circular(5),
-                                            color: Color(0xffF1F1F1)
-                                          ),
-                                          child: Row(
-                                            children: [
-                                              Icon(Icons.person, color: Color(0xff9E9E9E)),
-                                              Text("8 sports left", style: TextStyle(
-                                                color: Color(0xff9E9E9E)
-                                              ))
-                                            ],
-                                          ),
-                                        )
-                                      ],
-                                    )
-                                  ],
-                                ),
-                              ),
-                              Container(
-                                width: mqWidth(context, 15),
-                                child: Column(
-                                  children: [
-                                    Text("9€", style: TextStyle(
-                                      fontSize: 16,
-                                      fontWeight: FontWeight.w700
-                                    )),
-                                    VSpacing(2),
-                                    CustomButton(
-                                      onPressed: (){
+            ActivitiesList()
+          ],
+        ),
+      ),
+      bottomNavigationBar: Container(
+        width: mqWidth(context, 100),
+        height: mqHeigth(context, 10),
+        padding: EdgeInsets.symmetric(
+          horizontal: mqWidth(context, 5)
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            CustomIconButton(
+              size: 10,
+              fillColor: Color(0),
+              onPressed: (){
 
-                                      }, 
-                                      label: "Join", 
-                                      heigth: mqHeigth(context, 4),
-                                      width: mqWidth(context, 15), 
-                                      color: Colors.black
-                                    )
-                                  ],
-                                ),
-                              )
-                            ],
-                          ),
-                        )
-                      ],
-                    ),
-                  )
-                ],
-              ),
-            )
+              },
+              splashColor: Color(0xffE9ECEF),
+              icon: CustomSVGIcon(path: CustomIcons.calendarIcon)
+            ),
+            CustomIconButton(
+              size: 10,
+              fillColor: Color(0),
+              onPressed: (){
+
+              },
+              splashColor: Color(0xffE9ECEF),
+              icon: CustomSVGIcon(path: CustomIcons.mapIcon)
+            ),
+            CustomIconButton(
+              size: 10,
+              fillColor: Color(0),
+              onPressed: (){
+
+              },
+              splashColor: Color(0xffE9ECEF),
+              icon: CustomSVGIcon(path: CustomIcons.plusIcon)
+            ),
+            CustomIconButton(
+              size: 10,
+              fillColor: Color(0),
+              onPressed: (){
+
+              },
+              splashColor: Color(0xffE9ECEF),
+              icon: CustomSVGIcon(path: CustomIcons.usersIcon)
+            ),
+            CustomIconButton(
+              size: 10,
+              fillColor: Color(0),
+              onPressed: (){
+
+              },
+              splashColor: Color(0xffE9ECEF),
+              icon: CustomSVGIcon(path: CustomIcons.starIcon)
+            ),
           ],
         ),
       )
+      
     );
   }
 }

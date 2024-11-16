@@ -73,9 +73,18 @@ class CustomTextField extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          SizedBox(
+          Container(
             width: mqWidth(context, widthPer),
             height: height,
+            decoration: BoxDecoration(
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black.withOpacity(0.05),
+                  offset: Offset(5, 5),
+                  blurRadius: 5
+                )
+              ]
+            ),
             child: TextFormField(
               autocorrect: autocorrect,
               enabled: enabled,
@@ -117,21 +126,15 @@ class CustomTextField extends StatelessWidget {
                 fillColor: fillColor,
                 filled: fillColor != null,
                 border: OutlineInputBorder(
-                  borderSide: const BorderSide(
-                    color: Colors.grey
-                  ),
+                  borderSide: BorderSide.none,
                   borderRadius: BorderRadius.circular(borderRadius)
                 ),
                 enabledBorder: OutlineInputBorder(
-                  borderSide: const BorderSide(
-                    color: Colors.grey
-                  ),
+                  borderSide: BorderSide.none,
                   borderRadius: BorderRadius.circular(borderRadius)
                 ),
                 focusedBorder: OutlineInputBorder(
-                  borderSide: const BorderSide(
-                    color: Colors.grey
-                  ),
+                  borderSide: BorderSide.none,
                   borderRadius: BorderRadius.circular(borderRadius)
                 ),
                 prefixIcon: prefixIcon,

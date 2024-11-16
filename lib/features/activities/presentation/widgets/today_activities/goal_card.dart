@@ -14,7 +14,14 @@ class GoalCard extends StatelessWidget {
       width: mqWidth(context, 90),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(12),
-        color: Color(0xffBAE6FD)
+        color: Color(0xffBAE6FD),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withOpacity(0.12),
+            offset: Offset(3, 3),
+            blurRadius: 6
+          )
+        ]
       ),
       padding: EdgeInsets.symmetric(
         horizontal: mqWidth(context, 5),
@@ -23,13 +30,13 @@ class GoalCard extends StatelessWidget {
       child: Row(
         children: [
           Container(
-            width: mqWidth(context, 50),
+            width: mqWidth(context, 55),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text("You're close to your goal!", style: TextStyle(
                   fontSize: 20,
-                  fontWeight: FontWeight.w700
+                  fontWeight: FontWeight.w500
                 )),
                 Text(
                   "Join more sport activities to collect more points",
@@ -37,14 +44,14 @@ class GoalCard extends StatelessWidget {
                     fontSize: 16
                   )
                 ),
-                VSpacing(2),
+                VSpacing(1.5),
                 Row(
                   children: [
                     CustomButton(
                       heigth: mqHeigth(context, 4),
                       onPressed: (){}, 
                       label: "Join now", 
-                      width: mqWidth(context, 20), 
+                      width: mqWidth(context, 24), 
                       color: Colors.black,
                       fontSize: 18
                     ),
@@ -53,7 +60,7 @@ class GoalCard extends StatelessWidget {
                       heigth: mqHeigth(context, 4),
                       onPressed: (){}, 
                       label: "My points", 
-                      width: mqWidth(context, 22), 
+                      width: mqWidth(context, 24), 
                       color: Colors.black,
                       fontSize: 18
                     ),
@@ -63,15 +70,15 @@ class GoalCard extends StatelessWidget {
             ),
           ),
           Container(
-            width: mqWidth(context, 30),
+            width: mqWidth(context, 25),
             child: Column(
               children: [
                 CircularPercentIndicator(
-                  radius: mqWidth(context, 13),
-                  lineWidth: 12.0,
+                  radius: mqWidth(context, 12),
+                  lineWidth: 8.0,
                   percent: 0.7,
                   center: new Text("27", style: TextStyle(
-                    fontSize: 36,
+                    fontSize: 30,
                     fontWeight: FontWeight.w600
                   )),
                   progressColor: Color(0xff6ABEF6),
