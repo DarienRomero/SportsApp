@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:news_app/features/news/presentation/pages/news_home_page.dart';
+import 'package:news_app/core/navigation.dart';
+import 'package:news_app/features/activities/presentation/pages/today_activities.dart';
 
 class RouterPage extends StatefulWidget {
   const RouterPage({Key? key}) : super(key: key);
@@ -14,7 +15,7 @@ class _RouterPageState extends State<RouterPage> {
   void initState() {
     super.initState();
     WidgetsBinding.instance.addPostFrameCallback((_) {
-      Navigator.push(context, MaterialPageRoute(builder: (context) => const NewsHomePage()));
+      Navigator.pushAndRemoveUntil(context, materialNavigationRoute(context, TodayActivities()), (route) => false);
     });
   }
   

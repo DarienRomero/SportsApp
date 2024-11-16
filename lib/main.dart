@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:news_app/core/themes.dart';
 import 'package:news_app/features/common/presentation/pages/router_page.dart';
 import 'package:news_app/features/news/presentation/bloc/news_bloc.dart';
 import 'package:news_app/injection_container.dart';
@@ -45,9 +46,10 @@ class MyApp extends StatelessWidget {
       providers: [
         BlocProvider(create: (_) => serviceLocator.get<NewsBloc>()),
       ],
-      child: const MaterialApp(
-        title: 'News App',
+      child: MaterialApp(
+        title: 'DeportesApp',
         debugShowCheckedModeBanner: false,
+        theme: Themes.lightMode,
         home: RouterPage()
       ),
     );
