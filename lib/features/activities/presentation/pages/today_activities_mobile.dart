@@ -79,7 +79,9 @@ class _TodayActivitiesMobileState extends State<TodayActivitiesMobile> {
             ),
           ),
           VSpacing(2),
-          GoalCard(),
+          GoalCard(
+            width: mqWidth(context, 100),
+          ),
           VSpacing(2),
           CustomTextField(
             hintText: "What do you feel like doing", 

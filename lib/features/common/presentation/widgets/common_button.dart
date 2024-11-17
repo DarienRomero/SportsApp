@@ -18,6 +18,7 @@ class CustomButton extends StatelessWidget {
   final Color labelColor;
   final double elevation;
   final Widget? child;
+  final BoxFit boxFit;
 
   const CustomButton({
     Key? key, 
@@ -34,7 +35,8 @@ class CustomButton extends StatelessWidget {
     this.loading = false, 
     this.labelColor = Colors.white,
     this.elevation = 1,
-    this.child
+    this.child,
+    this.boxFit = BoxFit.none
   }) : super(key: key);
 
   @override
@@ -69,14 +71,17 @@ class CustomButton extends StatelessWidget {
                 const HSpacing(1)
               ],
             ) : Container(),
-            !loading ? child != null ? child! : Text(
-              label,
-              style: TextStyle(
-                color: disabled ? const Color(0xff9EA0A7) : labelColor,
-                fontSize: fontSize,
-                fontWeight: FontWeight.w500,
+            !loading ? child != null ? child! : FittedBox(
+              fit: boxFit,
+              child: Text(
+                label,
+                style: TextStyle(
+                  color: disabled ? const Color(0xff9EA0A7) : labelColor,
+                  fontSize: fontSize,
+                  fontWeight: FontWeight.w500,
+                ),
+                textAlign: TextAlign.center
               ),
-              textAlign: TextAlign.center
             ) : SizedBox(
               width: mqHeigth(context, 4),
               height: mqHeigth(context, 4),

@@ -32,6 +32,7 @@ class CustomTextField extends StatelessWidget {
   final double? height;
   final bool autocorrect;
   final bool enableSuggestions;
+  final double leftPaddingPer;
 
   const CustomTextField({
     required this.hintText, 
@@ -62,7 +63,8 @@ class CustomTextField extends StatelessWidget {
     this.fillColor,
     this.height = 55,
     this.autocorrect = false,
-    this.enableSuggestions = false
+    this.enableSuggestions = false,
+    this.leftPaddingPer = 5
   }) : super(key: key);
 
   @override
@@ -114,7 +116,7 @@ class CustomTextField extends StatelessWidget {
                 hintText: hintText,
                 counterText: "",
                 contentPadding: EdgeInsets.symmetric(
-                  horizontal: mqWidth(context, 5),
+                  horizontal: mqWidth(context, leftPaddingPer),
                   vertical: contentPadding
                 ),
                 hintStyle: hintStyle ?? const TextStyle(
