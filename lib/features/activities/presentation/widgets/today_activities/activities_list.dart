@@ -81,13 +81,11 @@ class _ActivitiesListState extends State<ActivitiesList> {
                   children: [
                     TextSpan(
                       text: "Today",
-                      style: TextStyle(
-                        fontSize: 18
-                      )
+                      style: Theme.of(context).textTheme.labelLarge
                     ),
                     TextSpan(
-                      text: "/ tuesday",
-                      style: TextStyle(
+                      text: " / tuesday",
+                      style: Theme.of(context).textTheme.labelSmall?.copyWith(
                         color: Color(0xff9E9E9E)
                       )
                     )

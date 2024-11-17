@@ -45,15 +45,14 @@ class _TodayActivitiesState extends State<TodayActivities> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text("Tues, Nov 12", style: TextStyle(
-                    fontFamily: "SFProDisplay",
-                    fontWeight: FontWeight.w500,
+                  Text("Tues, Nov 12", style: Theme.of(context).textTheme.labelSmall?.copyWith(
                     color: Color(0xffADB5BD)
-                  ),),
+                  )),
                   Row(
                     children: [
                       CustomSVGIcon(
-                        path: CustomIcons.bellIcon
+                        path: CustomIcons.bellIcon,
+                        color: Theme.of(context).iconTheme.color,
                       ),
                       HSpacing(2),
                       GeneralImage(
@@ -76,10 +75,7 @@ class _TodayActivitiesState extends State<TodayActivities> {
               ),
               child: Row(
                 children: [
-                  Text("This week in Estepona", style: TextStyle(
-                    fontSize: 24,
-                    fontWeight: FontWeight.w500
-                  )),
+                  Text("This week in Estepona", style: Theme.of(context).textTheme.titleLarge),
                 ],
               ),
             ),
@@ -125,7 +121,10 @@ class _TodayActivitiesState extends State<TodayActivities> {
 
               },
               splashColor: Color(0xffE9ECEF),
-              icon: CustomSVGIcon(path: CustomIcons.calendarIcon)
+              icon: CustomSVGIcon(
+                path: CustomIcons.calendarIcon,
+                color: Theme.of(context).iconTheme.color,
+              )
             ),
             CustomIconButton(
               size: 10,
@@ -134,7 +133,10 @@ class _TodayActivitiesState extends State<TodayActivities> {
 
               },
               splashColor: Color(0xffE9ECEF),
-              icon: CustomSVGIcon(path: CustomIcons.mapIcon)
+              icon: CustomSVGIcon(
+                path: CustomIcons.mapIcon,
+                color: Theme.of(context).iconTheme.color,
+              )
             ),
             CustomIconButton(
               size: 10,
@@ -143,7 +145,10 @@ class _TodayActivitiesState extends State<TodayActivities> {
 
               },
               splashColor: Color(0xffE9ECEF),
-              icon: CustomSVGIcon(path: CustomIcons.plusIcon)
+              icon: CustomSVGIcon(
+                path: CustomIcons.plusIcon,
+                color: Theme.of(context).iconTheme.color,
+              )
             ),
             CustomIconButton(
               size: 10,
@@ -152,7 +157,10 @@ class _TodayActivitiesState extends State<TodayActivities> {
 
               },
               splashColor: Color(0xffE9ECEF),
-              icon: CustomSVGIcon(path: CustomIcons.usersIcon)
+              icon: CustomSVGIcon(
+                path: CustomIcons.usersIcon,
+                color: Theme.of(context).iconTheme.color,
+              )
             ),
             CustomIconButton(
               size: 10,
@@ -161,7 +169,10 @@ class _TodayActivitiesState extends State<TodayActivities> {
 
               },
               splashColor: Color(0xffE9ECEF),
-              icon: CustomSVGIcon(path: CustomIcons.starIcon)
+              icon: CustomSVGIcon(
+                path: CustomIcons.starIcon,
+                color: Theme.of(context).iconTheme.color,
+              )
             ),
           ],
         ),

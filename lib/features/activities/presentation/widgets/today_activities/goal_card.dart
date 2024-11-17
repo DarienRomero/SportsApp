@@ -14,7 +14,7 @@ class GoalCard extends StatelessWidget {
       width: mqWidth(context, 90),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(12),
-        color: Color(0xffBAE6FD),
+        color: Theme.of(context).cardColor,
         boxShadow: [
           BoxShadow(
             color: Colors.black.withOpacity(0.12),
