@@ -1,7 +1,7 @@
-import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:news_app/core/custom_icons.dart';
+import 'package:news_app/core/platform_validation.dart';
 import 'package:news_app/core/utils.dart';
 import 'package:news_app/features/activities/presentation/widgets/today_activities/activities_list.dart';
 import 'package:news_app/features/activities/presentation/widgets/today_activities/category_selector.dart';
@@ -24,11 +24,13 @@ class TodayActivities extends StatefulWidget {
 
 class _TodayActivitiesState extends State<TodayActivities> {
   late ScrollController scrollController; 
+  late PlatformInfo platformInfo;
 
   @override
   void initState() {
     super.initState();
     scrollController = ScrollController();
+    platformInfo = PlatformInfo();
   }
 
   @override
@@ -37,7 +39,7 @@ class _TodayActivitiesState extends State<TodayActivities> {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            VSpacing(Platform.isAndroid ? 5 : 7),
+            VSpacing(platformInfo.isIOS ? 7 : 5),
             Container(
               padding: EdgeInsets.symmetric(
                 horizontal: mqWidth(context, 5)
