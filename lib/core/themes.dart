@@ -71,7 +71,7 @@ class Themes {
     fontFamily: 'SFProDisplay',
     primaryColor: const Color(0xffef5843),
     cardColor: Color(0xffA1E1FF),
-    scaffoldBackgroundColor: Color(0),
+    scaffoldBackgroundColor: Colors.black,
     shadowColor: Color(0),
     iconTheme: IconThemeData(
       color: Colors.white

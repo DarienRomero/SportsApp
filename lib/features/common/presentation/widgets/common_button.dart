@@ -7,7 +7,7 @@ class CustomButton extends StatelessWidget {
   final FontWeight fontWeight;
   final VoidCallback? onPressed;
   final String label;
-  final double width;
+  final double? width;
   final Color? color;
   final double heigth;
   final double borderRadius;
@@ -25,7 +25,7 @@ class CustomButton extends StatelessWidget {
     this.fontWeight = FontWeight.bold,
     required this.onPressed,
     required this.label,
-    required this.width,
+    this.width,
     required this.color,
     this.heigth = 60,
     this.borderRadius = 7,

@@ -81,8 +81,8 @@ class CustomTextField extends StatelessWidget {
             decoration: BoxDecoration(
               boxShadow: [
                 BoxShadow(
-                  color: Colors.black.withOpacity(0.05),
-                  offset: Offset(5, 5),
+                  color: Colors.black.withOpacity(0.12),
+                  offset: Offset(2, 2),
                   blurRadius: 5
                 )
               ]

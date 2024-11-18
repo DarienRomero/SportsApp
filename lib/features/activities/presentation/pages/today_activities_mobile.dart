@@ -6,8 +6,8 @@ import 'package:news_app/core/utils.dart';
 import 'package:news_app/features/activities/presentation/widgets/today_activities/activities_list.dart';
 import 'package:news_app/features/activities/presentation/widgets/today_activities/category_selector.dart';
 import 'package:news_app/features/activities/presentation/widgets/today_activities/goal_card.dart';
+import 'package:news_app/features/activities/presentation/widgets/today_activities/search_box.dart';
 import 'package:news_app/features/common/presentation/widgets/custom_svg_icon.dart';
-import 'package:news_app/features/common/presentation/widgets/custom_text_field.dart';
 import 'package:news_app/features/common/presentation/widgets/general_image.dart';
 import 'package:news_app/features/common/presentation/widgets/h_spacing.dart';
 import 'package:news_app/features/common/presentation/widgets/v_spacing.dart';
@@ -83,25 +83,10 @@ class _TodayActivitiesMobileState extends State<TodayActivitiesMobile> {
             width: mqWidth(context, 100),
           ),
           VSpacing(2),
-          CustomTextField(
-            hintText: "What do you feel like doing", 
-            label: "",
-            widthPer: 90,
-            fillColor: Colors.white,
-            suffixIcon: Padding(
-              padding: EdgeInsets.only(
-                top: mqWidth(context, 2),
-                bottom: mqWidth(context, 2),
-                right: mqWidth(context, 4),
-              ),
-              child: CustomSVGIcon(
-                path: CustomIcons.searchIcon
-              ),
-            ),
-          ),
+          SearchBox(),
           VSpacing(2),
           CategorySelector(),
-          VSpacing(3),
+          VSpacing(2.5),
           ActivitiesList()
         ],
       ),

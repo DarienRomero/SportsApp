@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:news_app/core/custom_icons.dart';
 import 'package:news_app/core/utils.dart';
 import 'package:news_app/features/common/presentation/widgets/common_button.dart';
-import 'package:news_app/features/common/presentation/widgets/custom_svg_icon.dart';
-import 'package:news_app/features/common/presentation/widgets/custom_text_field.dart';
 import 'package:news_app/features/common/presentation/widgets/v_spacing.dart';
 
 class EventsCardWeb extends StatelessWidget {

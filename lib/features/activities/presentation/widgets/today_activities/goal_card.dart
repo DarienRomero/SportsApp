@@ -34,7 +34,7 @@ class GoalCard extends StatelessWidget {
       child: Row(
         children: [
           Container(
-            width: width * 0.55,
+            width: width * 0.6,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -45,28 +45,28 @@ class GoalCard extends StatelessWidget {
                 Text(
                   "Join more sport activities to collect more points",
                   style: TextStyle(
-                    fontSize: 16
+                    fontSize: 14
                   )
                 ),
                 VSpacing(1.5),
                 Row(
                   children: [
                     CustomButton(
-                      heigth: mqHeigth(context, 4),
+                      heigth: mqHeigth(context, 3.5),
                       onPressed: (){}, 
                       label: "Join now", 
-                      width: width * 0.24, 
+                      width: width * 0.2, 
                       color: Colors.black,
-                      fontSize: 18,
+                      fontSize: 14,
                     ),
-                    HSpacing(2),
+                    HSpacing(3),
                     CustomButton(
-                      heigth: mqHeigth(context, 4),
+                      heigth: mqHeigth(context, 3.5),
                       onPressed: (){}, 
                       label: "My points", 
-                      width: width * 0.24, 
+                      width: width * 0.2, 
                       color: Colors.black,
-                      fontSize: 18
+                      fontSize: 14
                     ),
                   ],
                 )
@@ -74,15 +74,15 @@ class GoalCard extends StatelessWidget {
             ),
           ),
           Container(
-            width: width * 0.25,
+            width: width * 0.2,
             child: Column(
               children: [
                 CircularPercentIndicator(
-                  radius: width * 0.12,
+                  radius: width * 0.1,
                   lineWidth: 8.0,
                   percent: 0.7,
                   center: new Text("27", style: TextStyle(
-                    fontSize: 30,
+                    fontSize: 26,
                     fontWeight: FontWeight.w600
                   )),
                   progressColor: Color(0xff6ABEF6),

@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:news_app/core/custom_icons.dart';
 import 'package:news_app/core/utils.dart';
-import 'package:news_app/features/activities/presentation/widgets/today_activities/activities_list.dart';
-import 'package:news_app/features/activities/presentation/widgets/today_activities/category_selector.dart';
 import 'package:news_app/features/activities/presentation/widgets/today_activities_web/activities_list_web.dart';
 import 'package:news_app/features/activities/presentation/widgets/today_activities_web/category_selector_web.dart';
 import 'package:news_app/features/activities/presentation/widgets/today_activities_web/events_card_web.dart';
@@ -10,8 +7,6 @@ import 'package:news_app/features/activities/presentation/widgets/today_activiti
 import 'package:news_app/features/activities/presentation/widgets/today_activities_web/search_box_web.dart';
 import 'package:news_app/features/activities/presentation/widgets/today_activities_web/side_menu.dart';
 import 'package:news_app/features/activities/presentation/widgets/today_activities_web/workshop_card_web.dart';
-import 'package:news_app/features/common/presentation/widgets/custom_svg_icon.dart';
-import 'package:news_app/features/common/presentation/widgets/custom_text_field.dart';
 import 'package:news_app/features/common/presentation/widgets/v_spacing.dart';
 
 class TodayActivitiesWeb extends StatelessWidget {

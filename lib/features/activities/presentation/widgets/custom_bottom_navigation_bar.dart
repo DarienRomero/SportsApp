@@ -27,7 +27,7 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
       width: mqWidth(context, platformInfo.isWeb ? 0 : 100),
       height: mqHeigth(context, platformInfo.isWeb ? 0 : 10),
       padding: EdgeInsets.symmetric(
-        horizontal: mqWidth(context, 5)
+        horizontal: mqWidth(context, 7)
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -57,7 +57,7 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
             )
           ),
           CustomIconButton(
-            size: 10,
+            size: 12,
             fillColor: Color(0),
             onPressed: (){
 
@@ -65,7 +65,7 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
             splashColor: Color(0xffE9ECEF),
             icon: CustomSVGIcon(
               path: CustomIcons.plusIcon,
-              color: Theme.of(context).iconTheme.color,
+              sizePer: 12,
             )
           ),
           CustomIconButton(

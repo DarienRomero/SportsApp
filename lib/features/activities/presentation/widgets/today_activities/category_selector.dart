@@ -11,7 +11,7 @@ class CategorySelector extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: mqHeigth(context, 4),
+      height: mqHeigth(context, 3.5),
       padding: EdgeInsets.only(
         left: mqWidth(context, 5)
       ),
@@ -24,7 +24,7 @@ class CategorySelector extends StatelessWidget {
             }, 
             label: "",
             child: CustomSVGIcon(path: CustomIcons.slidersIcon),
-            width: mqWidth(context, 20), 
+            width: mqWidth(context, 18), 
             color: Color(0xffEEE1F5),
             elevation: 0,
           ),
@@ -35,7 +35,7 @@ class CategorySelector extends StatelessWidget {
             }, 
             label: "All", 
             fontSize: 16,
-            width: mqWidth(context, 20), 
+            width: mqWidth(context, 16), 
             labelColor: Colors.black,
             color: Color(0xffEEE1F5),
             elevation: 0,

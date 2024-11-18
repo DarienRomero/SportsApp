@@ -1,7 +1,6 @@
 import 'package:dotted_line/dotted_line.dart';
 import 'package:flutter/material.dart';
 import 'package:news_app/core/utils.dart';
-import 'package:news_app/features/activities/presentation/widgets/today_activities/activity_card.dart';
 import 'package:news_app/features/activities/presentation/widgets/today_activities_web/activity_card_web.dart';
 import 'package:news_app/features/common/presentation/widgets/v_spacing.dart';
 

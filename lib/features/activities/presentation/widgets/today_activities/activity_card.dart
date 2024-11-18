@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:news_app/core/custom_icons.dart';
 import 'package:news_app/core/utils.dart';
 import 'package:news_app/features/common/presentation/widgets/common_button.dart';
+import 'package:news_app/features/common/presentation/widgets/custom_svg_icon.dart';
 import 'package:news_app/features/common/presentation/widgets/h_spacing.dart';
 import 'package:news_app/features/common/presentation/widgets/v_spacing.dart';
 
@@ -11,7 +13,7 @@ class ActivityCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: mqWidth(context, 85),
-      height: mqHeigth(context, 18),
+      height: mqHeigth(context, 15),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
         color: Theme.of(context).scaffoldBackgroundColor,
@@ -32,56 +34,68 @@ class ActivityCard extends StatelessWidget {
             width: mqWidth(context, 65),
             padding: EdgeInsets.only(
               left: mqWidth(context, 5),
-              top: mqHeigth(context, 2),
-              bottom: mqHeigth(context, 2)
+              top: mqHeigth(context, 1),
             ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text.rich(TextSpan(
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    TextSpan(
-                      text: "09:00", style: Theme.of(context).textTheme.labelSmall
+                    Text.rich(TextSpan(
+                      children: [
+                        TextSpan(
+                          text: "09:00", style: Theme.of(context).textTheme.labelSmall
+                        ),
+                        TextSpan(
+                          text: " (60 min)",
+                          style: Theme.of(context).textTheme.labelSmall?.copyWith(
+                            color: Color(0xffADB5BD)
+                          )
+                        )
+                      ]
+                    )),
+                    VSpacing(1),
+                    Text("Beach Yoga", style: Theme.of(context).textTheme.displaySmall),
+                    VSpacing(1),
+                    Row(
+                      children: [
+                        CustomSVGIcon(path: CustomIcons.mapPinIcon, sizePer: 3),
+                        HSpacing(1),
+                        Text("La Playa de la Rada", style: Theme.of(context).textTheme.labelSmall?.copyWith(
+                          color: Color(0xffADB5BD)
+                        ))
+                      ],
                     ),
-                    TextSpan(
-                      text: " (60 min)",
-                      style: Theme.of(context).textTheme.labelSmall?.copyWith(
-                        color: Color(0xffADB5BD)
-                      )
-                    )
-                  ]
-                )),
-                VSpacing(1),
-                Text("Beach Yoga", style: Theme.of(context).textTheme.displaySmall),
-                VSpacing(1),
-                Row(
-                  children: [
-                    Icon(Icons.location_city, color: Color(0xffADB5BD)),
-                    HSpacing(1),
-                    Text("La Playa de la Rada", style: Theme.of(context).textTheme.labelSmall?.copyWith(
-                      color: Color(0xffADB5BD)
-                    ))
                   ],
                 ),
-                VSpacing(1),
-                Row(
-                  children: [
-                    Container(
-                      width: mqWidth(context, 30),
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(5),
-                        color: Color(0xffF1F1F1)
-                      ),
-                      child: Row(
-                        children: [
-                          Icon(Icons.person, color: Color(0xff9E9E9E)),
-                          Text("8 sports left", style: TextStyle(
-                            color: Color(0xff9E9E9E)
-                          ))
-                        ],
-                      ),
-                    )
-                  ],
+                Container(
+                  padding: EdgeInsets.only(
+                    bottom: mqHeigth(context, 1)
+                  ),
+                  child: Row(
+                    children: [
+                      Container(
+                        padding: EdgeInsets.symmetric(
+                          horizontal: mqWidth(context, 1.5)
+                        ),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(5),
+                          color: Color(0xffF1F1F1)
+                        ),
+                        child: Row(
+                          children: [
+                            CustomSVGIcon(path: CustomIcons.userIcon, sizePer: 3),
+                            HSpacing(1),
+                            Text("8 spots left", style: TextStyle(
+                              color: Color(0xff9E9E9E)
+                            ))
+                          ],
+                        ),
+                      )
+                    ],
+                  ),
                 )
               ],
             ),
@@ -103,7 +117,7 @@ class ActivityCard extends StatelessWidget {
                   width: mqWidth(context, 15), 
                   color: Theme.of(context).filledButtonTheme.style?.backgroundColor?.resolve({})
                 ),
-                VSpacing(2),
+                VSpacing(1),
               ],
             ),
           )
