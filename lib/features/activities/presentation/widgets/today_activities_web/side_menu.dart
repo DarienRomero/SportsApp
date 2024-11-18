@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:news_app/core/custom_icons.dart';
-import 'package:news_app/core/utils.dart';
-import 'package:news_app/features/activities/presentation/widgets/today_activities_web/create_button.dart';
-import 'package:news_app/features/common/presentation/widgets/custom_svg_icon.dart';
-import 'package:news_app/features/common/presentation/widgets/general_image.dart';
-import 'package:news_app/features/common/presentation/widgets/h_spacing.dart';
-import 'package:news_app/features/common/presentation/widgets/v_spacing.dart';
+import 'package:sports_app/core/custom_icons.dart';
+import 'package:sports_app/core/utils.dart';
+import 'package:sports_app/features/activities/presentation/widgets/today_activities_web/create_button.dart';
+import 'package:sports_app/features/common/presentation/widgets/custom_svg_icon.dart';
+import 'package:sports_app/features/common/presentation/widgets/general_image.dart';
+import 'package:sports_app/features/common/presentation/widgets/h_spacing.dart';
+import 'package:sports_app/features/common/presentation/widgets/v_spacing.dart';
 
 class SideMenu extends StatelessWidget {
   const SideMenu({super.key});

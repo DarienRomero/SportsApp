@@ -1,12 +1,12 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:news_app/core/custom_icons.dart';
-import 'package:news_app/core/utils.dart';
-import 'package:news_app/features/activities/presentation/bloc/activities_bloc.dart';
-import 'package:news_app/features/common/presentation/widgets/common_button.dart';
-import 'package:news_app/features/common/presentation/widgets/custom_svg_icon.dart';
-import 'package:news_app/features/common/presentation/widgets/h_spacing.dart';
+import 'package:sports_app/core/custom_icons.dart';
+import 'package:sports_app/core/utils.dart';
+import 'package:sports_app/features/activities/presentation/bloc/activities_bloc.dart';
+import 'package:sports_app/features/common/presentation/widgets/common_button.dart';
+import 'package:sports_app/features/common/presentation/widgets/custom_svg_icon.dart';
+import 'package:sports_app/features/common/presentation/widgets/h_spacing.dart';
 
 class CategorySelector extends StatelessWidget {
   const CategorySelector({super.key});

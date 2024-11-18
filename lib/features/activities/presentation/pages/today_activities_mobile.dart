@@ -1,16 +1,16 @@
 
 import 'package:flutter/material.dart';
-import 'package:news_app/core/custom_icons.dart';
-import 'package:news_app/core/platform_validation.dart';
-import 'package:news_app/core/utils.dart';
-import 'package:news_app/features/activities/presentation/widgets/today_activities/activities_list.dart';
-import 'package:news_app/features/activities/presentation/widgets/today_activities/category_selector.dart';
-import 'package:news_app/features/activities/presentation/widgets/today_activities/goal_card.dart';
-import 'package:news_app/features/activities/presentation/widgets/today_activities/search_box.dart';
-import 'package:news_app/features/common/presentation/widgets/custom_svg_icon.dart';
-import 'package:news_app/features/common/presentation/widgets/general_image.dart';
-import 'package:news_app/features/common/presentation/widgets/h_spacing.dart';
-import 'package:news_app/features/common/presentation/widgets/v_spacing.dart';
+import 'package:sports_app/core/custom_icons.dart';
+import 'package:sports_app/core/platform_validation.dart';
+import 'package:sports_app/core/utils.dart';
+import 'package:sports_app/features/activities/presentation/widgets/today_activities/activities_list.dart';
+import 'package:sports_app/features/activities/presentation/widgets/today_activities/category_selector.dart';
+import 'package:sports_app/features/activities/presentation/widgets/today_activities/goal_card.dart';
+import 'package:sports_app/features/activities/presentation/widgets/today_activities/search_box.dart';
+import 'package:sports_app/features/common/presentation/widgets/custom_svg_icon.dart';
+import 'package:sports_app/features/common/presentation/widgets/general_image.dart';
+import 'package:sports_app/features/common/presentation/widgets/h_spacing.dart';
+import 'package:sports_app/features/common/presentation/widgets/v_spacing.dart';
 
 class TodayActivitiesMobile extends StatefulWidget {
 

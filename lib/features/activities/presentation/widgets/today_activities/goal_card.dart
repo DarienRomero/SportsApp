@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:news_app/core/utils.dart';
-import 'package:news_app/features/common/presentation/widgets/common_button.dart';
-import 'package:news_app/features/common/presentation/widgets/h_spacing.dart';
-import 'package:news_app/features/common/presentation/widgets/v_spacing.dart';
+import 'package:sports_app/core/utils.dart';
+import 'package:sports_app/features/common/presentation/widgets/common_button.dart';
+import 'package:sports_app/features/common/presentation/widgets/h_spacing.dart';
+import 'package:sports_app/features/common/presentation/widgets/v_spacing.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
 
 class GoalCard extends StatelessWidget {

@@ -1,10 +1,10 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:news_app/core/custom_icons.dart';
-import 'package:news_app/core/utils.dart';
-import 'package:news_app/features/activities/domain/entities/activity_entity.dart';
-import 'package:news_app/features/common/presentation/widgets/custom_svg_icon.dart';
-import 'package:news_app/features/common/presentation/widgets/h_spacing.dart';
+import 'package:sports_app/core/custom_icons.dart';
+import 'package:sports_app/core/utils.dart';
+import 'package:sports_app/features/activities/domain/entities/activity_entity.dart';
+import 'package:sports_app/features/common/presentation/widgets/custom_svg_icon.dart';
+import 'package:sports_app/features/common/presentation/widgets/h_spacing.dart';
 
 class SpotsLabel extends StatelessWidget {
   final ActivityEntity activityEntity;

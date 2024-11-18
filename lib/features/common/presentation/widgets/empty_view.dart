@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:news_app/core/utils.dart';
+import 'package:sports_app/core/utils.dart';
 
 /// A simple widget to display a placeholder view when no results or content are available.
 ///

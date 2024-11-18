@@ -1,10 +1,10 @@
 import 'dart:io';
 
 import 'package:http/http.dart' as http;
-import 'package:news_app/core/error/failures.dart';
-import 'package:news_app/features/activities/data/datasources/mock/activities_repository_mock_datasource.dart';
-import 'package:news_app/features/activities/data/models/activity_model.dart';
-import 'package:news_app/features/activities/data/models/label_model.dart';
+import 'package:sports_app/core/error/failures.dart';
+import 'package:sports_app/features/activities/data/datasources/mock/activities_repository_mock_datasource.dart';
+import 'package:sports_app/features/activities/data/models/activity_model.dart';
+import 'package:sports_app/features/activities/data/models/label_model.dart';
 import 'package:sentry_flutter/sentry_flutter.dart';
 
 class ActivitiesRepositoryMockDataSourceImpl implements ActivitiesRepositoryMockDataSource{

@@ -2,13 +2,13 @@ import 'package:dotted_line/dotted_line.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:news_app/core/utils.dart';
-import 'package:news_app/features/activities/presentation/bloc/activities_bloc.dart';
-import 'package:news_app/features/activities/presentation/widgets/today_activities/activity_card.dart';
-import 'package:news_app/features/common/presentation/widgets/empty_view.dart';
-import 'package:news_app/features/common/presentation/widgets/error_view.dart';
-import 'package:news_app/features/common/presentation/widgets/loading_view.dart';
-import 'package:news_app/features/common/presentation/widgets/v_spacing.dart';
+import 'package:sports_app/core/utils.dart';
+import 'package:sports_app/features/activities/presentation/bloc/activities_bloc.dart';
+import 'package:sports_app/features/activities/presentation/widgets/today_activities/activity_card.dart';
+import 'package:sports_app/features/common/presentation/widgets/empty_view.dart';
+import 'package:sports_app/features/common/presentation/widgets/error_view.dart';
+import 'package:sports_app/features/common/presentation/widgets/loading_view.dart';
+import 'package:sports_app/features/common/presentation/widgets/v_spacing.dart';
 
 class ActivitiesList extends StatefulWidget {
   const ActivitiesList({super.key});

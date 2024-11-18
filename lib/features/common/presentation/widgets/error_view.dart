@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:news_app/core/utils.dart';
+import 'package:sports_app/core/utils.dart';
 
 /// A widget to display an error message when something goes wrong.
 ///

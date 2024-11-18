@@ -1,9 +1,9 @@
 import 'package:dartz/dartz.dart';
-import 'package:news_app/core/error/failures.dart';
-import 'package:news_app/features/activities/data/datasources/mock/activities_repository_mock_datasource.dart';
-import 'package:news_app/features/activities/domain/entities/activity_entity.dart';
-import 'package:news_app/features/activities/domain/repositories/activities_repository.dart';
-import 'package:news_app/features/activities/domain/usecases/get_activities_usecase.dart';
+import 'package:sports_app/core/error/failures.dart';
+import 'package:sports_app/features/activities/data/datasources/mock/activities_repository_mock_datasource.dart';
+import 'package:sports_app/features/activities/domain/entities/activity_entity.dart';
+import 'package:sports_app/features/activities/domain/repositories/activities_repository.dart';
+import 'package:sports_app/features/activities/domain/usecases/get_activities_usecase.dart';
 
 class ActivitiesRepositoryImpl implements ActivitiesRepository{
 

@@ -1,13 +1,23 @@
-# news_app
-
-News Aplication
+Sports Aplication
 
 ## Features
 
 <ol>
   <li>Full clean architecture divided into features</li>
-  <li>Android and iOS launcher icon</li>
+  <li>Common Widgets fully documented</li>
   <li>Responsive and font size management</li>
   <li>Sentry implemented to catch potential errors (Native and Web services)</li>
-  <li>Image cache aware (Clean cache after a threshold reached)</li>
 </ol>
+
+# Steps to Set Up the App
+1. Clone the project using Flutter 3.24.3 - Java 17
+2. Run ```pub get``` to load the dependencies
+3. Change the Sentry URL
+4. To generate the release for Android, use (Make sure to modify the versionCode and versionName)
+```flutter build appbundle --target-platform android-arm,android-arm64,android-x64```
+5. To generate the release for iOS, use the following command and then run 'Archive' in XCode (Modify the versionCode and versionName).
+```flutter build ios --release```
+# Possible improves
+1. Skeleton loading effects
+2. Responsive for table size screens
+3. Flavors

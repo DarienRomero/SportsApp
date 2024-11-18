@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:news_app/core/custom_icons.dart';
-import 'package:news_app/core/utils.dart';
-import 'package:news_app/features/common/presentation/widgets/custom_svg_icon.dart';
-import 'package:news_app/features/common/presentation/widgets/h_spacing.dart';
+import 'package:sports_app/core/custom_icons.dart';
+import 'package:sports_app/core/utils.dart';
+import 'package:sports_app/features/common/presentation/widgets/custom_svg_icon.dart';
+import 'package:sports_app/features/common/presentation/widgets/h_spacing.dart';
 
 class CreateButton extends StatelessWidget {
   const CreateButton({super.key});

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:news_app/core/utils.dart';
+import 'package:sports_app/core/utils.dart';
 
 /// A widget that displays a loading indicator with a configurable height.
 ///

@@ -1,5 +1,5 @@
 import 'package:equatable/equatable.dart';
-import 'package:news_app/features/activities/domain/entities/label_entity.dart';
+import 'package:sports_app/features/activities/domain/entities/label_entity.dart';
 
 class ActivityEntity extends Equatable{
   final int id;

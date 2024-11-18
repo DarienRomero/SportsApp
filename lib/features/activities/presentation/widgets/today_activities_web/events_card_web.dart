@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:news_app/core/utils.dart';
-import 'package:news_app/features/common/presentation/widgets/common_button.dart';
-import 'package:news_app/features/common/presentation/widgets/v_spacing.dart';
+import 'package:sports_app/core/utils.dart';
+import 'package:sports_app/features/common/presentation/widgets/common_button.dart';
+import 'package:sports_app/features/common/presentation/widgets/v_spacing.dart';
 
 class EventsCardWeb extends StatelessWidget {
   final double width;

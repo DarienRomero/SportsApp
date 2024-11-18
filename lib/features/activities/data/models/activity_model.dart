@@ -1,5 +1,5 @@
-import 'package:news_app/features/activities/data/models/label_model.dart';
-import 'package:news_app/features/activities/domain/entities/activity_entity.dart';
+import 'package:sports_app/features/activities/data/models/label_model.dart';
+import 'package:sports_app/features/activities/domain/entities/activity_entity.dart';
 
 class ActivityModel extends ActivityEntity{
 

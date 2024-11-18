@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:news_app/core/navigation.dart';
-import 'package:news_app/features/activities/presentation/pages/today_activities.dart';
+import 'package:sports_app/core/navigation.dart';
+import 'package:sports_app/features/activities/presentation/pages/today_activities.dart';
 
+/// A page that redirects to correct page on app inits.
 class RouterPage extends StatefulWidget {
   const RouterPage({Key? key}) : super(key: key);
 

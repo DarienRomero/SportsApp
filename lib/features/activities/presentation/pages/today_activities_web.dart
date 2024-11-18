@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:news_app/core/utils.dart';
-import 'package:news_app/features/activities/presentation/widgets/today_activities/activities_list.dart';
-import 'package:news_app/features/activities/presentation/widgets/today_activities/category_selector.dart';
-import 'package:news_app/features/activities/presentation/widgets/today_activities/search_box.dart';
-import 'package:news_app/features/activities/presentation/widgets/today_activities_web/events_card_web.dart';
-import 'package:news_app/features/activities/presentation/widgets/today_activities_web/goal_card_web.dart';
-import 'package:news_app/features/activities/presentation/widgets/today_activities_web/side_menu.dart';
-import 'package:news_app/features/activities/presentation/widgets/today_activities_web/workshop_card_web.dart';
-import 'package:news_app/features/common/presentation/widgets/v_spacing.dart';
+import 'package:sports_app/core/utils.dart';
+import 'package:sports_app/features/activities/presentation/widgets/today_activities/activities_list.dart';
+import 'package:sports_app/features/activities/presentation/widgets/today_activities/category_selector.dart';
+import 'package:sports_app/features/activities/presentation/widgets/today_activities/search_box.dart';
+import 'package:sports_app/features/activities/presentation/widgets/today_activities_web/events_card_web.dart';
+import 'package:sports_app/features/activities/presentation/widgets/today_activities_web/goal_card_web.dart';
+import 'package:sports_app/features/activities/presentation/widgets/today_activities_web/side_menu.dart';
+import 'package:sports_app/features/activities/presentation/widgets/today_activities_web/workshop_card_web.dart';
+import 'package:sports_app/features/common/presentation/widgets/v_spacing.dart';
 
 class TodayActivitiesWeb extends StatelessWidget {
   const TodayActivitiesWeb({super.key});

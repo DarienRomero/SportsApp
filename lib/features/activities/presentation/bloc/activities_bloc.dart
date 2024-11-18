@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:news_app/features/activities/domain/entities/activity_entity.dart';
-import 'package:news_app/features/activities/domain/usecases/get_activities_usecase.dart';
+import 'package:sports_app/features/activities/domain/entities/activity_entity.dart';
+import 'package:sports_app/features/activities/domain/usecases/get_activities_usecase.dart';
 
 part 'activities_event.dart';
 part 'activities_state.dart';

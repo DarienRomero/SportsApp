@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:news_app/features/activities/presentation/pages/today_activities_mobile.dart';
-import 'package:news_app/features/activities/presentation/pages/today_activities_web.dart';
-import 'package:news_app/features/activities/presentation/widgets/custom_bottom_navigation_bar.dart';
+import 'package:sports_app/features/activities/presentation/pages/today_activities_mobile.dart';
+import 'package:sports_app/features/activities/presentation/pages/today_activities_web.dart';
+import 'package:sports_app/features/activities/presentation/widgets/custom_bottom_navigation_bar.dart';
 
 class TodayActivities extends StatelessWidget {
   const TodayActivities({super.key});

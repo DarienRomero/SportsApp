@@ -1,8 +1,8 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:news_app/core/extensions/extensions.dart';
-import 'package:news_app/core/utils.dart';
-import 'package:news_app/features/activities/domain/entities/label_entity.dart';
+import 'package:sports_app/core/extensions/extensions.dart';
+import 'package:sports_app/core/utils.dart';
+import 'package:sports_app/features/activities/domain/entities/label_entity.dart';
 
 class ActivityLabel extends StatelessWidget {
   final LabelEntity labelEntity;

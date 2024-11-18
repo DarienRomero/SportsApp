@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:news_app/core/custom_icons.dart';
-import 'package:news_app/core/platform_validation.dart';
-import 'package:news_app/core/utils.dart';
-import 'package:news_app/features/common/presentation/widgets/custom_icon_button.dart';
-import 'package:news_app/features/common/presentation/widgets/custom_svg_icon.dart';
+import 'package:sports_app/core/custom_icons.dart';
+import 'package:sports_app/core/platform_validation.dart';
+import 'package:sports_app/core/utils.dart';
+import 'package:sports_app/features/common/presentation/widgets/custom_icon_button.dart';
+import 'package:sports_app/features/common/presentation/widgets/custom_svg_icon.dart';
 
 class CustomBottomNavigationBar extends StatefulWidget {
   const CustomBottomNavigationBar({super.key});

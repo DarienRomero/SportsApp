@@ -1,7 +1,7 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:news_app/core/utils.dart';
+import 'package:sports_app/core/utils.dart';
 
 /// A versatile widget for displaying images from various sources, including network, local assets, and memory.
 ///
