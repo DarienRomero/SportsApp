@@ -17,6 +17,11 @@ Sports Aplication
 ```flutter build appbundle --target-platform android-arm,android-arm64,android-x64```
 5. To generate the release for iOS, use the following command and then run 'Archive' in XCode (Modify the versionCode and versionName).
 ```flutter build ios --release```
+
+# Some screenshots
+
+https://drive.google.com/drive/folders/1EHMeGODDG1FQHR1Pv4NKED5Ue5KgBiV7?usp=sharing
+
 # Possible improves
 1. Skeleton loading effects
 2. Responsive for table size screens
