@@ -2,7 +2,6 @@ import 'package:dotted_line/dotted_line.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_skeleton_ui/flutter_skeleton_ui.dart';
 import 'package:news_app/core/utils.dart';
 import 'package:news_app/features/activities/presentation/bloc/activities_bloc.dart';
 import 'package:news_app/features/activities/presentation/widgets/today_activities/activity_card.dart';
@@ -115,11 +114,11 @@ class _ActivitiesListState extends State<ActivitiesList> {
                     }
                   },
                   builder: (context, activitiesState){
-                    // return ActivitiesListSkeleton();
                     return activitiesState.activitiesListLoading ? 
                     LoadingView(
-                      heigth: kIsWeb ? 60 : 30,
-                    ) : activitiesState.activitiesListError ? const ErrorView(
+                      heigth: kIsWeb ? 60 :30
+                    ) :
+                    activitiesState.activitiesListError ? const ErrorView(
                       heigth: kIsWeb ? 60 :30
                     ) : activitiesState.activitiesList.isEmpty ? const EmptyView(
                       heigth: kIsWeb ? 60 : 30
@@ -139,36 +138,73 @@ class _ActivitiesListState extends State<ActivitiesList> {
   }
 }
 
-class ActivitiesListSkeleton extends StatelessWidget {
-  const ActivitiesListSkeleton({super.key});
+/* class ActivitiesListSkeleton extends StatelessWidget {
+  final bool loading;
+  final Widget child;
+  const ActivitiesListSkeleton({
+    super.key,
+    required this.loading,
+    required this.child
+  });
 
   @override
   Widget build(BuildContext context) {
     return Skeleton(
-      isLoading: true,
+      isLoading: loading,
       skeleton: Container(
-        height: mqHeigth(context, 30),
-        child: SkeletonListView(
-          itemCount: 3,
-          item: SkeletonListTile(
-            verticalSpacing: 12,
-            titleStyle: SkeletonLineStyle(
-              height: 16,
-              minLength: 200,
-              randomLength: true,
-              borderRadius: BorderRadius.circular(12)
+        height: mqHeigth(context, kIsWeb ? 60 : 40),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            SkeletonItem(
+              child: Container(
+                width: mqWidth(context, kIsWeb ? 46 : 85),
+                margin: EdgeInsets.only(
+                  bottom: mqHeigth(context, 2),
+                  right: mqWidth(context, kIsWeb ? 3 : 5)
+                ),
+                child: SkeletonLine(
+                  style: SkeletonLineStyle(
+                    borderRadius: BorderRadius.circular(10),
+                    height: mqHeigth(context, kIsWeb ? 21 :15),
+                  ),
+                ),
+              ),
             ),
-            subtitleStyle: SkeletonLineStyle(
-              height: 12,
-              maxLength: 200,
-              randomLength: true,
-              borderRadius: BorderRadius.circular(12)
+            SkeletonItem(
+              child: Container(
+                width: mqWidth(context, kIsWeb ? 46 : 85),
+                margin: EdgeInsets.only(
+                  bottom: mqHeigth(context, 2),
+                  right: mqWidth(context, kIsWeb ? 3 : 5)
+                ),
+                child: SkeletonLine(
+                  style: SkeletonLineStyle(
+                    borderRadius: BorderRadius.circular(10),
+                    height: mqHeigth(context, kIsWeb ? 21 :15),
+                  ),
+                ),
+              ),
             ),
-            hasSubtitle: true,
-          ),
-        ),
+            SkeletonItem(
+              child: Container(
+                width: mqWidth(context, kIsWeb ? 46 : 85),
+                margin: EdgeInsets.only(
+                  bottom: mqHeigth(context, 2),
+                  right: mqWidth(context, kIsWeb ? 3 : 5)
+                ),
+                child: SkeletonLine(
+                  style: SkeletonLineStyle(
+                    borderRadius: BorderRadius.circular(10),
+                    height: mqHeigth(context, kIsWeb ? 21 :15),
+                  ),
+                ),
+              ),
+            ),
+          ],
+        )
       ),
-      child: Container(),
+      child: child
     );
   }
-}
+} */

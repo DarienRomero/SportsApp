@@ -36,7 +36,7 @@ class CategorySelector extends StatelessWidget {
                 color:  Color(0xffEEE1F5),
                 elevation: 0,
               ),
-              HSpacing(2),
+              HSpacing(kIsWeb ? 0.5 : 2),
               CustomButton(
                 onPressed: (){
                   final activitiesBloc = BlocProvider.of<ActivitiesBloc>(context, listen: false);
@@ -51,7 +51,7 @@ class CategorySelector extends StatelessWidget {
                 color: activitiesState.categorySelected == "All" ? Color(0xffBAA1C8) : Color(0xffEEE1F5),
                 elevation: 0,
               ),
-              HSpacing(2),
+              HSpacing(kIsWeb ? 0.5 : 2),
               CustomButton(
                 onPressed: (){
                   final activitiesBloc = BlocProvider.of<ActivitiesBloc>(context, listen: false);
@@ -66,7 +66,7 @@ class CategorySelector extends StatelessWidget {
                 color: activitiesState.categorySelected == "Sports" ? Color(0xffBAA1C8) : Color(0xffEEE1F5),
                 elevation: 0,
               ),
-              HSpacing(2),
+              HSpacing(kIsWeb ? 0.5 : 2),
               CustomButton(
                 onPressed: (){
                   final activitiesBloc = BlocProvider.of<ActivitiesBloc>(context, listen: false);
@@ -81,7 +81,7 @@ class CategorySelector extends StatelessWidget {
                 color: activitiesState.categorySelected == "Kids" ? Color(0xffBAA1C8) : Color(0xffEEE1F5),
                 elevation: 0,
               ),
-               HSpacing(2),
+              HSpacing(kIsWeb ? 0.5 : 2),
               CustomButton(
                 onPressed: (){
                   final activitiesBloc = BlocProvider.of<ActivitiesBloc>(context, listen: false);

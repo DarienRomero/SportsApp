@@ -10,6 +10,7 @@ class SearchBox extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var isDarkMode = Theme.of(context).scaffoldBackgroundColor == Colors.black;
     return CustomTextField(
       hintText: "What do you feel like doing", 
       label: "",
@@ -21,7 +22,7 @@ class SearchBox extends StatelessWidget {
       leftPaddingPer: kIsWeb ? 1.5 : 5,
       hintStyle: kIsWeb ? TextStyle(
         fontSize: 12,
-        color: Color(0xffADB5BD)
+        color: isDarkMode ? Color(0xff6C757D) : Color(0xffADB5BD)
       ) : null,
       contentPadding: kIsWeb ? 10 : 15,
       fillColor: Colors.white,
@@ -34,6 +35,7 @@ class SearchBox extends StatelessWidget {
         child: CustomSVGIcon(
           path: CustomIcons.searchIcon,
           sizePer: kIsWeb ? 3 : 6,
+          color: isDarkMode ? Color(0xff6C757D) : null
         ),
       ),
     );

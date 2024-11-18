@@ -4,23 +4,31 @@ class LabelModel extends LabelEntity {
 
   const LabelModel({
     required String label,
-    required String labelColor,
-    required String backgroundColor
+    required String labelColorLight,
+    required String backgroundColorLight,
+    required String labelColorDark,
+    required String backgroundColorDark
   }) : super(
     label: label,
-    labelColor: labelColor,
-    backgroundColor: backgroundColor
+    labelColorLight: labelColorLight,
+    backgroundColorLight: backgroundColorLight,
+    labelColorDark: labelColorDark,
+    backgroundColorDark: backgroundColorDark,
   );
 
   factory LabelModel.fromMap(Map<String, dynamic> json) => LabelModel(
     label: json["label"] ?? "",
-    labelColor: json["label_color"] ?? "",
-    backgroundColor: json["background_color"] ?? ""
+    labelColorLight: json["label_color_light"] ?? "",
+    backgroundColorLight: json["background_color_light"] ?? "",
+    labelColorDark: json["label_color_dark"] ?? "",
+    backgroundColorDark: json["background_color_dark"] ?? ""
   );
 
   factory LabelModel.fromParent(LabelEntity data) => LabelModel(
     label: data.label,
-    labelColor: data.labelColor,
-    backgroundColor: data.backgroundColor
+    labelColorLight: data.labelColorLight,
+    backgroundColorLight: data.backgroundColorLight,
+    labelColorDark: data.labelColorDark,
+    backgroundColorDark: data.backgroundColorDark,
   );
 }

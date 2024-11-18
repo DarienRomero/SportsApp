@@ -5,6 +5,7 @@ import 'package:news_app/core/custom_icons.dart';
 import 'package:news_app/core/utils.dart';
 import 'package:news_app/features/activities/domain/entities/activity_entity.dart';
 import 'package:news_app/features/activities/presentation/widgets/today_activities/activity_label.dart';
+import 'package:news_app/features/activities/presentation/widgets/today_activities/spots_label.dart';
 import 'package:news_app/features/common/presentation/widgets/common_button.dart';
 import 'package:news_app/features/common/presentation/widgets/custom_svg_icon.dart';
 import 'package:news_app/features/common/presentation/widgets/h_spacing.dart';
@@ -86,33 +87,27 @@ class ActivityCard extends StatelessWidget {
                   ),
                   Container(
                     padding: EdgeInsets.only(
-                      bottom: mqHeigth(context, 1)
+                      bottom: mqHeigth(context, kIsWeb ? 2 : 1)
                     ),
                     child: Row(
                       children: [
                         Container(
-                          padding: EdgeInsets.symmetric(
-                            horizontal: mqWidth(context, 1.5)
+                          width: mqWidth(context, kIsWeb ? 30 : 55),
+                          child: SingleChildScrollView(
+                            scrollDirection: Axis.horizontal,
+                            child: Row(
+                              children: [
+                                SpotsLabel(
+                                  activityEntity: activityEntity,
+                                ),
+                                HSpacing(kIsWeb ? 0.5 : 2),
+                                ...activityEntity.labels.map((labelEntity) => ActivityLabel(
+                                  labelEntity: labelEntity
+                                )).toList()   
+                              ]
+                            )
                           ),
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(5),
-                            color: Color(0xffF1F1F1)
-                          ),
-                          child: Row(
-                            children: [
-                              HSpacing(kIsWeb ? 0.5 : 0),
-                              CustomSVGIcon(path: CustomIcons.userIcon, sizePer: kIsWeb ? 1: 3),
-                              HSpacing(kIsWeb ? 0.5 : 1),
-                              Text("${activityEntity.availableSpots} ${activityEntity.availableSpots == 1 ? 'spot' : 'spots'} left", style: TextStyle(
-                                color: Color(0xff9E9E9E)
-                              ))
-                            ],
-                          ),
-                        ),
-                        HSpacing(2),
-                        ...activityEntity.labels.map((labelEntity) => ActivityLabel(
-                          labelEntity: labelEntity
-                        )).toList()                     
+                        )
                       ],
                     ),
                   )

@@ -29,8 +29,10 @@ class ActivitiesRepositoryMockDataSourceImpl implements ActivitiesRepositoryMock
           labels: [
             LabelModel(
               label: "light",
-              labelColor: "65B5DB",
-              backgroundColor: "D5F1FF"
+              labelColorLight: "65B5DB",
+              backgroundColorLight: "D5F1FF",
+              labelColorDark: "D5F1FF",
+              backgroundColorDark: "65B5DB"
             )
           ],
           category: "Sports"
@@ -46,13 +48,17 @@ class ActivitiesRepositoryMockDataSourceImpl implements ActivitiesRepositoryMock
           labels: [
             LabelModel(
               label: "medium",
-              labelColor: "C9A4F2",
-              backgroundColor: "F3E8FF"
+              labelColorLight: "C9A4F2",
+              backgroundColorLight: "F3E8FF",
+              labelColorDark: "F3E8FF",
+              backgroundColorDark: "C9A4F2"
             ),
             LabelModel(
               label: "childcare",
-              labelColor: "8AB58A",
-              backgroundColor: "D8F7DF"
+              labelColorLight: "8AB58A",
+              backgroundColorLight: "D8F7DF",
+              labelColorDark: "D8F7DF",
+              backgroundColorDark: "8AB58A"
             ),
           ],
           category: "Yoga"
@@ -68,13 +74,17 @@ class ActivitiesRepositoryMockDataSourceImpl implements ActivitiesRepositoryMock
           labels: [
             LabelModel(
               label: "high", 
-              labelColor: "DC974F", 
-              backgroundColor: "FFEAD1"
+              labelColorLight: "DC974F", 
+              backgroundColorLight: "FFEAD1",
+              labelColorDark: "FFEAD1",
+              backgroundColorDark: "DC974F"
             ),
             LabelModel(
               label: "childcare",
-              labelColor: "8AB58A",
-              backgroundColor: "D8F7DF"
+              labelColorLight: "8AB58A",
+              backgroundColorLight: "D8F7DF",
+              labelColorDark: "D8F7DF",
+              backgroundColorDark: "8AB58A"
             ),
           ],
           category: "Sports"
@@ -90,13 +100,17 @@ class ActivitiesRepositoryMockDataSourceImpl implements ActivitiesRepositoryMock
           labels: [
             LabelModel(
               label: "high", 
-              labelColor: "DC974F", 
-              backgroundColor: "FFEAD1"
+              labelColorLight: "DC974F", 
+              backgroundColorLight: "FFEAD1",
+              labelColorDark: "FFEAD1",
+              backgroundColorDark: "DC974F"
             ),
             LabelModel(
               label: "childcare",
-              labelColor: "8AB58A",
-              backgroundColor: "D8F7DF"
+              labelColorLight: "8AB58A",
+              backgroundColorLight: "D8F7DF",
+              labelColorDark: "D8F7DF",
+              backgroundColorDark: "8AB58A"
             ),
           ],
           category: "Kids",
