@@ -26,8 +26,8 @@ class EmptyView extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       height: mqHeigth(context, heigth),
-      child: const Center(
-        child: Text("Sin resultados"), // Displays a static placeholder message.
+      child: Center(
+        child: Text("No results", style: Theme.of(context).textTheme.labelSmall), // Displays a static placeholder message.
       ),
     );
   }
