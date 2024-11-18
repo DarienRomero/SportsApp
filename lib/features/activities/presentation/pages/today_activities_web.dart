@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:news_app/core/utils.dart';
-import 'package:news_app/features/activities/presentation/widgets/today_activities_web/activities_list_web.dart';
-import 'package:news_app/features/activities/presentation/widgets/today_activities_web/category_selector_web.dart';
+import 'package:news_app/features/activities/presentation/widgets/today_activities/activities_list.dart';
+import 'package:news_app/features/activities/presentation/widgets/today_activities/category_selector.dart';
+import 'package:news_app/features/activities/presentation/widgets/today_activities/search_box.dart';
 import 'package:news_app/features/activities/presentation/widgets/today_activities_web/events_card_web.dart';
 import 'package:news_app/features/activities/presentation/widgets/today_activities_web/goal_card_web.dart';
-import 'package:news_app/features/activities/presentation/widgets/today_activities_web/search_box_web.dart';
 import 'package:news_app/features/activities/presentation/widgets/today_activities_web/side_menu.dart';
 import 'package:news_app/features/activities/presentation/widgets/today_activities_web/workshop_card_web.dart';
 import 'package:news_app/features/common/presentation/widgets/v_spacing.dart';
@@ -20,8 +20,8 @@ class TodayActivitiesWeb extends StatelessWidget {
           SideMenu(),
           Container(
             width: mqWidth(context, 55),
-            padding: EdgeInsets.symmetric(
-              horizontal: mqWidth(context, 3)
+            padding: EdgeInsets.only(
+              left: mqWidth(context, 3)
             ),
             height: mqHeigth(context, 100),
             child: Column(
@@ -35,11 +35,11 @@ class TodayActivitiesWeb extends StatelessWidget {
                   fontSize: 22
                 )),
                 VSpacing(2),
-                SearchBoxWeb(),
+                SearchBox(),
                 VSpacing(3),
-                CategorySelectorWeb(),
+                CategorySelector(),
                 VSpacing(2),
-                ActivitiesListWeb()
+                ActivitiesList()
               ],
             ),
           ),

@@ -1,4 +1,5 @@
 import 'package:animate_do/animate_do.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:news_app/core/custom_icons.dart';
 import 'package:news_app/core/utils.dart';
@@ -21,11 +22,11 @@ class ActivityCard extends StatelessWidget {
     return FadeInLeft(
       duration: Duration(milliseconds: 600),
       child: Container(
-        width: mqWidth(context, 85),
-        height: mqHeigth(context, 15),
+        width: mqWidth(context, kIsWeb ? 46 : 85),
+        height: mqHeigth(context, kIsWeb ? 21 :15),
         margin: EdgeInsets.only(
           bottom: mqHeigth(context, 2),
-          right: mqWidth(context, 5)
+          right: mqWidth(context, kIsWeb ? 3 : 5)
         ),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10),
@@ -44,10 +45,10 @@ class ActivityCard extends StatelessWidget {
         child: Row(
           children: [
             Container(
-              width: mqWidth(context, 65),
+              width: kIsWeb ? (mqWidth(context, 36) - 2) : mqWidth(context, 65),
               padding: EdgeInsets.only(
-                left: mqWidth(context, 5),
-                top: mqHeigth(context, 1),
+                left: mqWidth(context, kIsWeb ? 2 : 5),
+                top: mqHeigth(context, kIsWeb ? 2 : 1),
               ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -74,7 +75,7 @@ class ActivityCard extends StatelessWidget {
                       VSpacing(1),
                       Row(
                         children: [
-                          CustomSVGIcon(path: CustomIcons.mapPinIcon, sizePer: 3),
+                          CustomSVGIcon(path: CustomIcons.mapPinIcon, sizePer: kIsWeb ? 1: 3),
                           HSpacing(1),
                           Text(activityEntity.location, style: Theme.of(context).textTheme.labelSmall?.copyWith(
                             color: Color(0xffADB5BD)
@@ -99,8 +100,9 @@ class ActivityCard extends StatelessWidget {
                           ),
                           child: Row(
                             children: [
-                              CustomSVGIcon(path: CustomIcons.userIcon, sizePer: 3),
-                              HSpacing(1),
+                              HSpacing(kIsWeb ? 0.5 : 0),
+                              CustomSVGIcon(path: CustomIcons.userIcon, sizePer: kIsWeb ? 1: 3),
+                              HSpacing(kIsWeb ? 0.5 : 1),
                               Text("${activityEntity.availableSpots} ${activityEntity.availableSpots == 1 ? 'spot' : 'spots'} left", style: TextStyle(
                                 color: Color(0xff9E9E9E)
                               ))
@@ -118,23 +120,23 @@ class ActivityCard extends StatelessWidget {
               ),
             ),
             Container(
-              width: mqWidth(context, 15),
+              width: mqWidth(context, kIsWeb ? 10 : 15),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
-                  Text("9€", style: Theme.of(context).textTheme.displaySmall),
-                  VSpacing(2),
+                  Text("${activityEntity.price}€", style: Theme.of(context).textTheme.displaySmall),
+                  VSpacing(kIsWeb ? 3 : 2),
                   CustomButton(
                     onPressed: (){
       
                     }, 
                     label: "Join", 
                     labelColor: Theme.of(context).indicatorColor,
-                    heigth: mqHeigth(context, 4),
-                    width: mqWidth(context, 15), 
+                    heigth: mqHeigth(context, kIsWeb ? 5 : 4),
+                    width: mqWidth(context, kIsWeb ? 5 : 15), 
                     color: Theme.of(context).filledButtonTheme.style?.backgroundColor?.resolve({})
                   ),
-                  VSpacing(1),
+                  VSpacing(kIsWeb ? 2 : 1),
                 ],
               ),
             )

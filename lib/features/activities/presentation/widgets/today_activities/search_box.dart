@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:news_app/core/custom_icons.dart';
 import 'package:news_app/core/utils.dart';
@@ -12,17 +13,27 @@ class SearchBox extends StatelessWidget {
     return CustomTextField(
       hintText: "What do you feel like doing", 
       label: "",
-      widthPer: 90,
-      height: 50,
+      widthPer: kIsWeb ? 49 : 90,
+      height: kIsWeb ? mqHeigth(context, 5) : 50,
+      style: kIsWeb ? TextStyle(
+        fontSize: 12
+      ) : null,
+      leftPaddingPer: kIsWeb ? 1.5 : 5,
+      hintStyle: kIsWeb ? TextStyle(
+        fontSize: 12,
+        color: Color(0xffADB5BD)
+      ) : null,
+      contentPadding: kIsWeb ? 10 : 15,
       fillColor: Colors.white,
       suffixIcon: Padding(
         padding: EdgeInsets.only(
-          top: mqWidth(context, 2),
-          bottom: mqWidth(context, 2),
-          right: mqWidth(context, 4),
+          top: kIsWeb ? 5.0 : mqWidth(context, 2),
+          bottom: kIsWeb ? 5.0 : mqWidth(context, 2),
+          right: kIsWeb? 10 : mqWidth(context, 4),
         ),
         child: CustomSVGIcon(
-          path: CustomIcons.searchIcon
+          path: CustomIcons.searchIcon,
+          sizePer: kIsWeb ? 3 : 6,
         ),
       ),
     );

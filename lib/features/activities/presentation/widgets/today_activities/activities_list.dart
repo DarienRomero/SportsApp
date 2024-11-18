@@ -1,4 +1,5 @@
 import 'package:dotted_line/dotted_line.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_skeleton_ui/flutter_skeleton_ui.dart';
@@ -47,19 +48,20 @@ class _ActivitiesListState extends State<ActivitiesList> {
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.only(
-        left: mqWidth(context, 5)
+        left: mqWidth(context, kIsWeb ? 0 : 5)
       ),
       child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
-            width: mqWidth(context, 5),
+            width: mqWidth(context, kIsWeb ? 3 : 5),
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+              crossAxisAlignment: kIsWeb ? CrossAxisAlignment.center : CrossAxisAlignment.start,
               children: [
-                VSpacing(0.5),
+                VSpacing(kIsWeb ? 1: 0.5),
                 Container(
-                  width: mqWidth(context, 3),
-                  height: mqWidth(context, 3),
+                  width: mqWidth(context, kIsWeb ? 1: 3),
+                  height: mqWidth(context, kIsWeb ? 1 :3),
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
                     color: Color(0xffFFF09C)
@@ -67,7 +69,7 @@ class _ActivitiesListState extends State<ActivitiesList> {
                 ),
                 Container(
                   width: mqWidth(context, 3),
-                  height: _listViewHeight != null ? _listViewHeight! - mqWidth(context, 4) : 0,
+                  height: _listViewHeight != null ? _listViewHeight! - mqWidth(context, kIsWeb ? 0 : 4) : 0,
                   child: Center(
                     child: DottedLine(
                       direction: Axis.vertical,
@@ -82,8 +84,8 @@ class _ActivitiesListState extends State<ActivitiesList> {
             ),
           ),
           Container(
-            width: mqWidth(context, 90),
-            height: mqHeigth(context, 40),
+            width: mqWidth(context, kIsWeb ? 49 : 90),
+            height: mqHeigth(context, kIsWeb ? 60 : 40),
             child: ListView(
               key: _listViewKey,
               padding: EdgeInsets.zero,
@@ -103,7 +105,7 @@ class _ActivitiesListState extends State<ActivitiesList> {
                     )
                   ]
                 )),
-                VSpacing(1.5),
+                VSpacing(kIsWeb ? 2 : 1.5),
                 BlocConsumer<ActivitiesBloc, ActivitiesState>(
                   listener: (context, activitiesState){
                     if(activitiesState.activitiesList.isNotEmpty){
@@ -116,11 +118,11 @@ class _ActivitiesListState extends State<ActivitiesList> {
                     // return ActivitiesListSkeleton();
                     return activitiesState.activitiesListLoading ? 
                     LoadingView(
-                      heigth: 30,
+                      heigth: kIsWeb ? 60 : 30,
                     ) : activitiesState.activitiesListError ? const ErrorView(
-                      heigth: 30
+                      heigth: kIsWeb ? 60 :30
                     ) : activitiesState.activitiesList.isEmpty ? const EmptyView(
-                      heigth: 30
+                      heigth: kIsWeb ? 60 : 30
                     ) :  Column(
                       children: activitiesState.activitiesList.map((e) => ActivityCard(
                         activityEntity: e

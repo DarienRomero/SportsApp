@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:news_app/core/custom_icons.dart';
@@ -15,9 +16,9 @@ class CategorySelector extends StatelessWidget {
     return BlocBuilder<ActivitiesBloc, ActivitiesState>(
       builder: (context, activitiesState){
         return  Container(
-          height: mqHeigth(context, 3.5),
+          height: mqHeigth(context, kIsWeb ? 5 : 3.5),
           padding: EdgeInsets.only(
-            left: mqWidth(context, 5)
+            left: mqWidth(context, kIsWeb ? 0 : 5)
           ),
           child: ListView(
             scrollDirection: Axis.horizontal,
@@ -27,8 +28,11 @@ class CategorySelector extends StatelessWidget {
 
                 }, 
                 label: "",
-                child: CustomSVGIcon(path: CustomIcons.slidersIcon),
-                width: mqWidth(context, 18), 
+                child: Padding(
+                  padding: const EdgeInsets.all(kIsWeb ? 7.0 : 0),
+                  child: CustomSVGIcon(path: CustomIcons.slidersIcon, sizePer: kIsWeb ? 3 : 6,),
+                ),
+                width: mqWidth(context, kIsWeb ? 5 : 18), 
                 color:  Color(0xffEEE1F5),
                 elevation: 0,
               ),
@@ -41,8 +45,8 @@ class CategorySelector extends StatelessWidget {
                   ));
                 }, 
                 label: "All", 
-                fontSize: 16,
-                width: mqWidth(context, 16), 
+                fontSize: kIsWeb ? 14 : 16,
+                width: mqWidth(context, kIsWeb ? 5 : 16), 
                 labelColor: Colors.black,
                 color: activitiesState.categorySelected == "All" ? Color(0xffBAA1C8) : Color(0xffEEE1F5),
                 elevation: 0,
@@ -56,8 +60,8 @@ class CategorySelector extends StatelessWidget {
                   ));
                 }, 
                 label: "Sports", 
-                fontSize: 16,
-                width: mqWidth(context, 20), 
+                fontSize: kIsWeb ? 14 : 16,
+                width: mqWidth(context, kIsWeb ? 5 : 20), 
                 labelColor: Colors.black,
                 color: activitiesState.categorySelected == "Sports" ? Color(0xffBAA1C8) : Color(0xffEEE1F5),
                 elevation: 0,
@@ -71,8 +75,8 @@ class CategorySelector extends StatelessWidget {
                   ));
                 }, 
                 label: "Kids", 
-                fontSize: 16,
-                width: mqWidth(context, 20), 
+                fontSize: kIsWeb ? 14 : 16,
+                width: mqWidth(context, kIsWeb ? 5 : 20), 
                 labelColor: Colors.black,
                 color: activitiesState.categorySelected == "Kids" ? Color(0xffBAA1C8) : Color(0xffEEE1F5),
                 elevation: 0,
@@ -86,8 +90,8 @@ class CategorySelector extends StatelessWidget {
                   ));
                 }, 
                 label: "Creative", 
-                fontSize: 16,
-                width: mqWidth(context, 20), 
+                fontSize: kIsWeb ? 14 : 16,
+                width: mqWidth(context, kIsWeb ? 5 : 20), 
                 labelColor: Colors.black,
                 color: activitiesState.categorySelected == "Creative" ? Color(0xffBAA1C8) : Color(0xffEEE1F5),
                 elevation: 0,
