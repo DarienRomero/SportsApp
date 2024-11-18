@@ -1,10 +1,10 @@
 import 'package:get_it/get_it.dart';
-import 'package:news_app/features/news/data/datasources/news_repository_remote_datasource.dart';
-import 'package:news_app/features/news/data/datasources/news_repository_remote_datasource_impl.dart';
-import 'package:news_app/features/news/data/repositories/news_repository_impl.dart';
-import 'package:news_app/features/news/domain/repositories/news_repository.dart';
-import 'package:news_app/features/news/domain/usecases/get_news_usecase.dart';
-import 'package:news_app/features/news/presentation/bloc/news_bloc.dart';
+import 'package:news_app/features/activities/data/datasources/mock/activities_repository_mock_datasource.dart';
+import 'package:news_app/features/activities/data/datasources/mock/activities_repository_mock_datasource_impl.dart';
+import 'package:news_app/features/activities/data/repositories/activities_repository_impl.dart';
+import 'package:news_app/features/activities/domain/repositories/activities_repository.dart';
+import 'package:news_app/features/activities/domain/usecases/get_activities_usecase.dart';
+import 'package:news_app/features/activities/presentation/bloc/activities_bloc.dart';
 import 'package:http/http.dart' as http;
 
 final serviceLocator = GetIt.instance;
@@ -12,25 +12,25 @@ final serviceLocator = GetIt.instance;
 Future<void> initializeServiceLocator() async {
 
   serviceLocator.registerLazySingleton(() => http.Client());
-  //NEWS_BLOC
+  //ACTIVITIES_BLOC
 
-  serviceLocator.registerLazySingleton(() => GetNewsUseCase(serviceLocator()));
+  serviceLocator.registerLazySingleton(() => GetActivitiesUseCase(serviceLocator()));
 
   serviceLocator.registerFactory(
-    () => NewsBloc(
-      getNewsUseCase: serviceLocator(),
+    () => ActivitiesBloc(
+      getActivitiesUseCase: serviceLocator(),
     ),
   );
 
-  serviceLocator.registerLazySingleton<NewsRepository>(
-    () => NewsRepositoryImpl(
-      newsRepositoryRemoteDataSource: serviceLocator(),
+  serviceLocator.registerLazySingleton<ActivitiesRepository>(
+    () => ActivitiesRepositoryImpl(
+      activitiesRepositoryMockDataSource: serviceLocator(),
     ),
   );
 
   //* data sources
-  serviceLocator.registerLazySingleton<NewsRepositoryRemoteDataSource>(
-    () => NewsRepositoryRemoteDataSourceImpl(
+  serviceLocator.registerLazySingleton<ActivitiesRepositoryMockDataSource>(
+    () => ActivitiesRepositoryMockDataSourceImpl(
       client: serviceLocator(),
     ),
   );

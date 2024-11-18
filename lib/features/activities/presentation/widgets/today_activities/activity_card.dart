@@ -1,19 +1,27 @@
 import 'package:flutter/material.dart';
 import 'package:news_app/core/custom_icons.dart';
 import 'package:news_app/core/utils.dart';
+import 'package:news_app/features/activities/domain/entities/activity_entity.dart';
 import 'package:news_app/features/common/presentation/widgets/common_button.dart';
 import 'package:news_app/features/common/presentation/widgets/custom_svg_icon.dart';
 import 'package:news_app/features/common/presentation/widgets/h_spacing.dart';
 import 'package:news_app/features/common/presentation/widgets/v_spacing.dart';
 
 class ActivityCard extends StatelessWidget {
-  const ActivityCard({super.key});
+  final ActivityEntity activityEntity;
+  const ActivityCard({
+    super.key,
+    required this.activityEntity
+  });
 
   @override
   Widget build(BuildContext context) {
     return Container(
       width: mqWidth(context, 85),
       height: mqHeigth(context, 15),
+      margin: EdgeInsets.only(
+        bottom: mqHeigth(context, 2)
+      ),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
         color: Theme.of(context).scaffoldBackgroundColor,
@@ -46,10 +54,10 @@ class ActivityCard extends StatelessWidget {
                     Text.rich(TextSpan(
                       children: [
                         TextSpan(
-                          text: "09:00", style: Theme.of(context).textTheme.labelSmall
+                          text: activityEntity.startTime, style: Theme.of(context).textTheme.labelSmall
                         ),
                         TextSpan(
-                          text: " (60 min)",
+                          text: " (${activityEntity.duration} min)",
                           style: Theme.of(context).textTheme.labelSmall?.copyWith(
                             color: Color(0xffADB5BD)
                           )
@@ -57,13 +65,13 @@ class ActivityCard extends StatelessWidget {
                       ]
                     )),
                     VSpacing(1),
-                    Text("Beach Yoga", style: Theme.of(context).textTheme.displaySmall),
+                    Text(activityEntity.title, style: Theme.of(context).textTheme.displaySmall),
                     VSpacing(1),
                     Row(
                       children: [
                         CustomSVGIcon(path: CustomIcons.mapPinIcon, sizePer: 3),
                         HSpacing(1),
-                        Text("La Playa de la Rada", style: Theme.of(context).textTheme.labelSmall?.copyWith(
+                        Text(activityEntity.location, style: Theme.of(context).textTheme.labelSmall?.copyWith(
                           color: Color(0xffADB5BD)
                         ))
                       ],
@@ -88,7 +96,7 @@ class ActivityCard extends StatelessWidget {
                           children: [
                             CustomSVGIcon(path: CustomIcons.userIcon, sizePer: 3),
                             HSpacing(1),
-                            Text("8 spots left", style: TextStyle(
+                            Text("${activityEntity.availableSpots} ${activityEntity.availableSpots == 1 ? 'spot' : 'spots'} left", style: TextStyle(
                               color: Color(0xff9E9E9E)
                             ))
                           ],

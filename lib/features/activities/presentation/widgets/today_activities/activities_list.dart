@@ -1,7 +1,12 @@
 import 'package:dotted_line/dotted_line.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:news_app/core/utils.dart';
+import 'package:news_app/features/activities/presentation/bloc/activities_bloc.dart';
 import 'package:news_app/features/activities/presentation/widgets/today_activities/activity_card.dart';
+import 'package:news_app/features/common/presentation/widgets/empty_view.dart';
+import 'package:news_app/features/common/presentation/widgets/error_view.dart';
+import 'package:news_app/features/common/presentation/widgets/loading_view.dart';
 import 'package:news_app/features/common/presentation/widgets/v_spacing.dart';
 
 class ActivitiesList extends StatefulWidget {
@@ -19,7 +24,10 @@ class _ActivitiesListState extends State<ActivitiesList> {
   @override
   void initState() {
     super.initState();
-    WidgetsBinding.instance.addPostFrameCallback((_) => _getListViewHeight());
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      // _getListViewHeight();
+      BlocProvider.of<ActivitiesBloc>(context, listen: false).add(StartGetActivities());
+    });
   }
 
   void _getListViewHeight() {
@@ -92,9 +100,28 @@ class _ActivitiesListState extends State<ActivitiesList> {
                   ]
                 )),
                 VSpacing(1.5),
-                ActivityCard(),
-                VSpacing(1.5),
-                ActivityCard(),
+                BlocConsumer<ActivitiesBloc, ActivitiesState>(
+                  listener: (context, activitiesState){
+                    if(activitiesState.activitiesList.isNotEmpty){
+                      WidgetsBinding.instance.addPostFrameCallback((_){
+                        _getListViewHeight();
+                      });
+                    }
+                  },
+                  builder: (context, activitiesState){
+                    return activitiesState.activitiesListLoading ? const LoadingView(
+                      heigth: 100
+                    ) : activitiesState.activitiesListError ? const ErrorView(
+                      heigth: 100
+                    ) : activitiesState.activitiesList.isEmpty ? const EmptyView(
+                      heigth: 100
+                    ) :  Column(
+                      children: activitiesState.activitiesList.map((e) => ActivityCard(
+                        activityEntity: e
+                      )).toList()
+                    );
+                  }, 
+                )
               ],
             ),
           )

@@ -6,8 +6,8 @@ import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:news_app/core/platform_validation.dart';
 import 'package:news_app/core/themes.dart';
+import 'package:news_app/features/activities/presentation/bloc/activities_bloc.dart';
 import 'package:news_app/features/common/presentation/pages/router_page.dart';
-import 'package:news_app/features/news/presentation/bloc/news_bloc.dart';
 import 'package:news_app/injection_container.dart';
 import 'package:sentry_flutter/sentry_flutter.dart';
 
@@ -52,12 +52,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
-        BlocProvider(create: (_) => serviceLocator.get<NewsBloc>()),
+        BlocProvider(create: (_) => serviceLocator.get<ActivitiesBloc>()),
       ],
       child: MaterialApp(
         title: 'DeportesApp',
         debugShowCheckedModeBanner: false,
-        theme: Themes.darkMode,
+        theme: Themes.lightMode,
         home: RouterPage()
       ),
     );
