@@ -13,10 +13,10 @@ class ActivitiesRepositoryMockDataSourceImpl implements ActivitiesRepositoryMock
   ActivitiesRepositoryMockDataSourceImpl({required this.client});
   
   @override
-  Future<List<ActivityModel>> getActivities() async {
+  Future<List<ActivityModel>> getActivities(String category) async {
     try{
-      await Future.delayed(Duration(milliseconds: 500));
-      return [
+      await Future.delayed(Duration(milliseconds: 1000));
+      final activities = [
         ActivityModel(
           id: 1, 
           startTime: "08:00", 
@@ -25,7 +25,8 @@ class ActivitiesRepositoryMockDataSourceImpl implements ActivitiesRepositoryMock
           location: "La Playa de la Rada", 
           availableSpots: 8, 
           price: "9.0",
-          labels: ["light"]
+          labels: ["light"],
+          category: "Sports"
         ),
         ActivityModel(
           id: 2, 
@@ -35,7 +36,8 @@ class ActivitiesRepositoryMockDataSourceImpl implements ActivitiesRepositoryMock
           location: "Wellness Studio", 
           availableSpots: 3, 
           price: "15.0",
-          labels: ["medium", "childcare"]
+          labels: ["medium", "childcare"],
+          category: "Yoga"
         ),
         ActivityModel(
           id: 3, 
@@ -45,9 +47,25 @@ class ActivitiesRepositoryMockDataSourceImpl implements ActivitiesRepositoryMock
           location: "Municipal Sports Center", 
           availableSpots: 0, 
           price: "19.0",
-          labels: ["high", "childcare"]
+          labels: ["high", "childcare"],
+          category: "Sports"
         ),
+        ActivityModel(
+          id: 4,
+          startTime: "10:00",
+          duration: 120,
+          title: "Taller de Pintura para Niños",
+          location: "Centro Cultural Infantil",
+          availableSpots: 15,
+          price: "20.0", // Precio por niño
+          labels: ["high", "childcare"],
+          category: "Kids",
+        )
       ];
+      if(category == "All"){
+        return activities;
+      }
+      return activities.where((e) => e.category == category).toList();
     } on SocketException {
       throw NetworkFailure.exception;
     } on InvalidDataFailure{

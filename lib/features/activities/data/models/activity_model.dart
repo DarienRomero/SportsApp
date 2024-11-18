@@ -10,7 +10,8 @@ class ActivityModel extends ActivityEntity{
     required String location,
     required int availableSpots,
     required String price,
-    required List<String> labels
+    required List<String> labels,
+    required String category
   }) : super(
     id: id,
     startTime: startTime,
@@ -20,17 +21,19 @@ class ActivityModel extends ActivityEntity{
     availableSpots: availableSpots,
     price: price,
     labels: labels,
+    category: category,
   );
 
   factory ActivityModel.fromMap(Map<String, dynamic> json) => ActivityModel(
     id: json["id"] ?? -1,
-    startTime: json["startTime"] ?? "",
+    startTime: json["start_time"] ?? "",
     duration: json["duration"] ?? -1,
     title: json["title"] ?? "",
     location: json["location"] ?? "",
-    availableSpots: json["availableSpots"] ?? -1,
+    availableSpots: json["available_spots"] ?? -1,
     price: json["price"] ?? "",
     labels: json["labels"] ?? "",
+    category: json["category"] ?? "",
   );
 
   @override
@@ -42,7 +45,8 @@ class ActivityModel extends ActivityEntity{
     String? location,
     int? availableSpots,
     String? price,
-    List<String>? labels
+    List<String>? labels,
+    String? category
   }) => ActivityModel(
     id: id ?? this.id,
     startTime: startTime ?? this.startTime,
@@ -52,5 +56,6 @@ class ActivityModel extends ActivityEntity{
     availableSpots: availableSpots ?? this.availableSpots,
     price: price ?? this.price,
     labels: labels ?? this.labels,
+    category: category ?? this.category,
   );
 }

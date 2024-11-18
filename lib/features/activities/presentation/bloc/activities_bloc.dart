@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:news_app/core/usecases/usecases.dart';
 import 'package:news_app/features/activities/domain/entities/activity_entity.dart';
 import 'package:news_app/features/activities/domain/usecases/get_activities_usecase.dart';
 
@@ -16,7 +15,8 @@ class ActivitiesBloc extends Bloc<ActivitiesEvent, ActivitiesState> {
   }) : super( const ActivitiesState(
     activitiesList: [],
     activitiesListError: false,
-    activitiesListLoading: false
+    activitiesListLoading: false,
+    categorySelected: "All"
   ) ) {
 
     on<StartGetActivities>((event, emit) async {
@@ -25,7 +25,9 @@ class ActivitiesBloc extends Bloc<ActivitiesEvent, ActivitiesState> {
         activitiesListError: false,
         activitiesList: [],
       ));
-      final failureOrData = await getActivitiesUseCase(NoParams());
+      final failureOrData = await getActivitiesUseCase(GetActivitiesParams(
+        category: state.categorySelected
+      ));
       failureOrData.fold(
         (failure) => emit(state.copyWith(
           activitiesListLoading: false,
@@ -38,6 +40,12 @@ class ActivitiesBloc extends Bloc<ActivitiesEvent, ActivitiesState> {
           activitiesList: data
         ))
       );
+    });
+    on<StartSelectCategory>((event, emit) async {
+      emit(state.copyWith(
+        categorySelected: event.category
+      ));
+      add(StartGetActivities());
     });
   }
 }

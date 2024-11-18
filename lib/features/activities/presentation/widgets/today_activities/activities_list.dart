@@ -1,6 +1,7 @@
 import 'package:dotted_line/dotted_line.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_skeleton_ui/flutter_skeleton_ui.dart';
 import 'package:news_app/core/utils.dart';
 import 'package:news_app/features/activities/presentation/bloc/activities_bloc.dart';
 import 'package:news_app/features/activities/presentation/widgets/today_activities/activity_card.dart';
@@ -26,7 +27,10 @@ class _ActivitiesListState extends State<ActivitiesList> {
     super.initState();
     WidgetsBinding.instance.addPostFrameCallback((_) {
       // _getListViewHeight();
-      BlocProvider.of<ActivitiesBloc>(context, listen: false).add(StartGetActivities());
+      final activitiesBloc = BlocProvider.of<ActivitiesBloc>(context, listen: false);
+      activitiesBloc.add(StartGetActivities(
+        
+      ));
     });
   }
 
@@ -79,11 +83,11 @@ class _ActivitiesListState extends State<ActivitiesList> {
           ),
           Container(
             width: mqWidth(context, 85),
+            height: mqHeigth(context, 40),
             child: ListView(
               key: _listViewKey,
               padding: EdgeInsets.zero,
               scrollDirection: Axis.vertical,
-              shrinkWrap: true,
               children: [
                 Text.rich(TextSpan(
                   children: [
@@ -109,12 +113,14 @@ class _ActivitiesListState extends State<ActivitiesList> {
                     }
                   },
                   builder: (context, activitiesState){
-                    return activitiesState.activitiesListLoading ? const LoadingView(
-                      heigth: 100
+                    // return ActivitiesListSkeleton();
+                    return activitiesState.activitiesListLoading ? 
+                    LoadingView(
+                      heigth: 30,
                     ) : activitiesState.activitiesListError ? const ErrorView(
-                      heigth: 100
+                      heigth: 30
                     ) : activitiesState.activitiesList.isEmpty ? const EmptyView(
-                      heigth: 100
+                      heigth: 30
                     ) :  Column(
                       children: activitiesState.activitiesList.map((e) => ActivityCard(
                         activityEntity: e
@@ -127,6 +133,40 @@ class _ActivitiesListState extends State<ActivitiesList> {
           )
         ],
       ),
+    );
+  }
+}
+
+class ActivitiesListSkeleton extends StatelessWidget {
+  const ActivitiesListSkeleton({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Skeleton(
+      isLoading: true,
+      skeleton: Container(
+        height: mqHeigth(context, 30),
+        child: SkeletonListView(
+          itemCount: 3,
+          item: SkeletonListTile(
+            verticalSpacing: 12,
+            titleStyle: SkeletonLineStyle(
+              height: 16,
+              minLength: 200,
+              randomLength: true,
+              borderRadius: BorderRadius.circular(12)
+            ),
+            subtitleStyle: SkeletonLineStyle(
+              height: 12,
+              maxLength: 200,
+              randomLength: true,
+              borderRadius: BorderRadius.circular(12)
+            ),
+            hasSubtitle: true,
+          ),
+        ),
+      ),
+      child: Container(),
     );
   }
 }

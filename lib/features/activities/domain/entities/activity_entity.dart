@@ -9,6 +9,7 @@ class ActivityEntity extends Equatable{
   final int availableSpots;
   final String price;
   final List<String> labels;
+  final String category;
 
   const ActivityEntity({
     required this.id,
@@ -19,6 +20,7 @@ class ActivityEntity extends Equatable{
     required this.availableSpots,
     required this.price,
     required this.labels,
+    required this.category
   });
 
   ActivityEntity copyWith({
@@ -29,7 +31,8 @@ class ActivityEntity extends Equatable{
     String? location,
     int? availableSpots,
     String? price,
-    List<String>? labels
+    List<String>? labels,
+    String? category
   }) => ActivityEntity(
     id: id ?? this.id,
     startTime: startTime ?? this.startTime,
@@ -39,6 +42,7 @@ class ActivityEntity extends Equatable{
     availableSpots: availableSpots ?? this.availableSpots,
     price: price ?? this.price,
     labels: labels ?? this.labels,
+    category: category ?? this.category,
   );
   
   @override
@@ -50,6 +54,7 @@ class ActivityEntity extends Equatable{
     location,
     availableSpots,
     price,
-    labels
+    labels,
+    category
   ];
 }

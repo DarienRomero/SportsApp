@@ -6,3 +6,10 @@ abstract class ActivitiesEvent {
 class StartGetActivities extends ActivitiesEvent {
   StartGetActivities();
 }
+
+class StartSelectCategory extends ActivitiesEvent {
+  final String category;
+  StartSelectCategory({
+    required this.category
+  });
+}
