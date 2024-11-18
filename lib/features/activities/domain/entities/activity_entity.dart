@@ -1,4 +1,5 @@
 import 'package:equatable/equatable.dart';
+import 'package:news_app/features/activities/domain/entities/label_entity.dart';
 
 class ActivityEntity extends Equatable{
   final int id;
@@ -8,7 +9,7 @@ class ActivityEntity extends Equatable{
   final String location;
   final int availableSpots;
   final String price;
-  final List<String> labels;
+  final List<LabelEntity> labels;
   final String category;
 
   const ActivityEntity({
@@ -31,7 +32,7 @@ class ActivityEntity extends Equatable{
     String? location,
     int? availableSpots,
     String? price,
-    List<String>? labels,
+    List<LabelEntity>? labels,
     String? category
   }) => ActivityEntity(
     id: id ?? this.id,

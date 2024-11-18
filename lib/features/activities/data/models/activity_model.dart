@@ -1,3 +1,4 @@
+import 'package:news_app/features/activities/data/models/label_model.dart';
 import 'package:news_app/features/activities/domain/entities/activity_entity.dart';
 
 class ActivityModel extends ActivityEntity{
@@ -10,7 +11,7 @@ class ActivityModel extends ActivityEntity{
     required String location,
     required int availableSpots,
     required String price,
-    required List<String> labels,
+    required List<LabelModel> labels,
     required String category
   }) : super(
     id: id,
@@ -32,30 +33,7 @@ class ActivityModel extends ActivityEntity{
     location: json["location"] ?? "",
     availableSpots: json["available_spots"] ?? -1,
     price: json["price"] ?? "",
-    labels: json["labels"] ?? "",
+    labels: json["labels"] != null ? json["labels"].map((e)=> LabelModel.fromMap(e)).toList() : [],
     category: json["category"] ?? "",
-  );
-
-  @override
-  ActivityModel copyWith({
-    int? id,
-    String? startTime,
-    int? duration,
-    String? title,
-    String? location,
-    int? availableSpots,
-    String? price,
-    List<String>? labels,
-    String? category
-  }) => ActivityModel(
-    id: id ?? this.id,
-    startTime: startTime ?? this.startTime,
-    duration: duration ?? this.duration,
-    title: title ?? this.title,
-    location: location ?? this.location,
-    availableSpots: availableSpots ?? this.availableSpots,
-    price: price ?? this.price,
-    labels: labels ?? this.labels,
-    category: category ?? this.category,
   );
 }

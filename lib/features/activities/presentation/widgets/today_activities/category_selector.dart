@@ -67,14 +67,29 @@ class CategorySelector extends StatelessWidget {
                 onPressed: (){
                   final activitiesBloc = BlocProvider.of<ActivitiesBloc>(context, listen: false);
                   activitiesBloc.add(StartSelectCategory(
-                    category: "Food"
+                    category: "Kids"
                   ));
                 }, 
-                label: "Food", 
+                label: "Kids", 
                 fontSize: 16,
                 width: mqWidth(context, 20), 
                 labelColor: Colors.black,
-                color: activitiesState.categorySelected == "Food" ? Color(0xffBAA1C8) : Color(0xffEEE1F5),
+                color: activitiesState.categorySelected == "Kids" ? Color(0xffBAA1C8) : Color(0xffEEE1F5),
+                elevation: 0,
+              ),
+               HSpacing(2),
+              CustomButton(
+                onPressed: (){
+                  final activitiesBloc = BlocProvider.of<ActivitiesBloc>(context, listen: false);
+                  activitiesBloc.add(StartSelectCategory(
+                    category: "Creative"
+                  ));
+                }, 
+                label: "Creative", 
+                fontSize: 16,
+                width: mqWidth(context, 20), 
+                labelColor: Colors.black,
+                color: activitiesState.categorySelected == "Creative" ? Color(0xffBAA1C8) : Color(0xffEEE1F5),
                 elevation: 0,
               ),
             ],

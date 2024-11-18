@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:news_app/core/custom_icons.dart';
 import 'package:news_app/core/utils.dart';
 import 'package:news_app/features/activities/domain/entities/activity_entity.dart';
+import 'package:news_app/features/activities/presentation/widgets/today_activities/activity_label.dart';
 import 'package:news_app/features/common/presentation/widgets/common_button.dart';
 import 'package:news_app/features/common/presentation/widgets/custom_svg_icon.dart';
 import 'package:news_app/features/common/presentation/widgets/h_spacing.dart';
@@ -23,7 +24,8 @@ class ActivityCard extends StatelessWidget {
         width: mqWidth(context, 85),
         height: mqHeigth(context, 15),
         margin: EdgeInsets.only(
-          bottom: mqHeigth(context, 2)
+          bottom: mqHeigth(context, 2),
+          right: mqWidth(context, 5)
         ),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10),
@@ -104,7 +106,11 @@ class ActivityCard extends StatelessWidget {
                               ))
                             ],
                           ),
-                        )
+                        ),
+                        HSpacing(2),
+                        ...activityEntity.labels.map((labelEntity) => ActivityLabel(
+                          labelEntity: labelEntity
+                        )).toList()                     
                       ],
                     ),
                   )

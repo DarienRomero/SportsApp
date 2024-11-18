@@ -46,8 +46,8 @@ class _ActivitiesListState extends State<ActivitiesList> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(
-        horizontal: mqWidth(context, 5)
+      padding: EdgeInsets.only(
+        left: mqWidth(context, 5)
       ),
       child: Row(
         children: [
@@ -82,7 +82,7 @@ class _ActivitiesListState extends State<ActivitiesList> {
             ),
           ),
           Container(
-            width: mqWidth(context, 85),
+            width: mqWidth(context, 90),
             height: mqHeigth(context, 40),
             child: ListView(
               key: _listViewKey,
