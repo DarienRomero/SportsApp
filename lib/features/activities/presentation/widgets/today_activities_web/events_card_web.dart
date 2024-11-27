@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sports_app/core/utils.dart';
 import 'package:sports_app/features/common/presentation/widgets/common_button.dart';
+import 'package:sports_app/features/common/presentation/widgets/general_image.dart';
 import 'package:sports_app/features/common/presentation/widgets/v_spacing.dart';
 
 class EventsCardWeb extends StatelessWidget {
@@ -55,15 +56,50 @@ class EventsCardWeb extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              CustomButton(
-                onPressed: (){
-              
-                }, 
-                label: "See more", 
-                width: width * 0.5, 
-                heigth: mqHeigth(context, 5),
-                color: Colors.white,
-                labelColor: Colors.black,
+              Stack(
+                clipBehavior: Clip.none,
+                children: [
+                  CustomButton(
+                    onPressed: (){
+                  
+                    }, 
+                    label: "See more", 
+                    width: width * 0.5, 
+                    heigth: mqHeigth(context, 5),
+                    color: Colors.white,
+                    labelColor: Colors.black,
+                  ),
+                  Positioned(
+                    left: -20,
+                    child: GeneralImage(
+                      url: "assets/images/guy_1.png",
+                      width: mqHeigth(context, 6),
+                      height: mqHeigth(context, 6),
+                      borderRadius: 300,
+                      fit: BoxFit.cover,
+                    )
+                  ),
+                  Positioned(
+                    left: -10,
+                    child: GeneralImage(
+                      url: "assets/images/guy_2.png",
+                      width: mqHeigth(context, 6),
+                      height: mqHeigth(context, 6),
+                      borderRadius: 300,
+                      fit: BoxFit.cover,
+                    )
+                  ),
+                  Positioned(
+                    left: 0,
+                    child: GeneralImage(
+                      url: "assets/images/guy_3.png",
+                      width: mqHeigth(context, 6),
+                      height: mqHeigth(context, 6),
+                      borderRadius: 300,
+                      fit: BoxFit.cover,
+                    )
+                  ),
+                ],
               ),
             ],
           )

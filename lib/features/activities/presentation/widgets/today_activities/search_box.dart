@@ -21,8 +21,9 @@ class SearchBox extends StatelessWidget {
       ) : null,
       leftPaddingPer: kIsWeb ? 1.5 : 5,
       hintStyle: kIsWeb ? TextStyle(
-        fontSize: 12,
-        color: isDarkMode ? Color(0xff6C757D) : Color(0xffADB5BD)
+        fontSize: 14,
+        fontWeight: FontWeight.w300,
+        color: Color(0xffADB5BD)
       ) : null,
       contentPadding: kIsWeb ? 10 : 15,
       fillColor: Colors.white,
@@ -35,7 +36,7 @@ class SearchBox extends StatelessWidget {
         child: CustomSVGIcon(
           path: CustomIcons.searchIcon,
           sizePer: kIsWeb ? 3 : 6,
-          color: isDarkMode ? Color(0xff6C757D) : null
+          color: kIsWeb ? Color(0xffADB5BD) : isDarkMode ? Color(0xff6C757D) : null
         ),
       ),
     );

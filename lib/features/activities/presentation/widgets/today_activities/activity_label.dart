@@ -19,10 +19,11 @@ class ActivityLabel extends StatelessWidget {
         right: mqWidth(context, kIsWeb ? 0.5 : 1)
       ),
       padding: EdgeInsets.symmetric(
-        horizontal: mqWidth(context, 1.5)
+        horizontal: mqWidth(context, kIsWeb ? 1.2 : 1.5),
+        vertical: mqHeigth(context, kIsWeb ? 0.2 : 0)
       ),
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(5),
+        borderRadius: BorderRadius.circular(kIsWeb ? 2 : 5),
         color: isDarkMode ? 
           labelEntity.backgroundColorDark.toColor():
           labelEntity.backgroundColorLight.toColor()

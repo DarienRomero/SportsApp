@@ -23,6 +23,7 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
 
   @override
   Widget build(BuildContext context) {
+    var isDarkMode = Theme.of(context).scaffoldBackgroundColor == Colors.black;
     return Container(
       width: mqWidth(context, platformInfo.isWeb ? 0 : 100),
       height: mqHeigth(context, platformInfo.isWeb ? 0 : 10),
@@ -38,7 +39,7 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
             onPressed: (){
 
             },
-            splashColor: Color(0xffE9ECEF),
+            splashColor: Color(0xffA1E1FF),
             icon: CustomSVGIcon(
               path: CustomIcons.calendarIcon,
               color: Theme.of(context).iconTheme.color,
@@ -50,7 +51,7 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
             onPressed: (){
 
             },
-            splashColor: Color(0xffE9ECEF),
+            splashColor: Color(0xffA1E1FF),
             icon: CustomSVGIcon(
               path: CustomIcons.mapIcon,
               color: Theme.of(context).iconTheme.color,
@@ -58,11 +59,11 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
           ),
           CustomIconButton(
             size: 12,
-            fillColor: Color(0),
+            fillColor: isDarkMode ? Color(0xff4FC7FF) : Color(0xffC1EBFF),
             onPressed: (){
 
             },
-            splashColor: Color(0xffE9ECEF),
+            splashColor: Color(0xffA1E1FF),
             icon: CustomSVGIcon(
               path: CustomIcons.plusIcon,
               sizePer: 12,
@@ -74,7 +75,7 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
             onPressed: (){
 
             },
-            splashColor: Color(0xffE9ECEF),
+            splashColor: Color(0xffA1E1FF),
             icon: CustomSVGIcon(
               path: CustomIcons.usersIcon,
               color: Theme.of(context).iconTheme.color,
@@ -86,7 +87,7 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
             onPressed: (){
 
             },
-            splashColor: Color(0xffE9ECEF),
+            splashColor: Color(0xffA1E1FF),
             icon: CustomSVGIcon(
               path: CustomIcons.starIcon,
               color: Theme.of(context).iconTheme.color,

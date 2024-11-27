@@ -77,7 +77,7 @@ class GoalCardWeb extends StatelessWidget {
                     ),
                     CircularPercentIndicator(
                       radius: width * 0.12,
-                      lineWidth: 5.0,
+                      lineWidth: 7.0,
                       percent: 0.7,
                       center: new Text("27", style: TextStyle(
                         fontSize: 24,

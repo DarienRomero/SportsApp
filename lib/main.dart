@@ -57,7 +57,7 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         title: 'DeportesApp',
         debugShowCheckedModeBanner: false,
-        theme: Themes.darkMode,
+        theme: Themes.lightMode,
         home: RouterPage()
       ),
     );

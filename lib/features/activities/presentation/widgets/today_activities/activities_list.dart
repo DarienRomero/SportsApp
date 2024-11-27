@@ -1,10 +1,10 @@
-import 'package:dotted_line/dotted_line.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:sports_app/core/utils.dart';
 import 'package:sports_app/features/activities/presentation/bloc/activities_bloc.dart';
 import 'package:sports_app/features/activities/presentation/widgets/today_activities/activity_card.dart';
+import 'package:sports_app/features/activities/presentation/widgets/today_activities/side_line.dart';
 import 'package:sports_app/features/common/presentation/widgets/empty_view.dart';
 import 'package:sports_app/features/common/presentation/widgets/error_view.dart';
 import 'package:sports_app/features/common/presentation/widgets/loading_view.dart';
@@ -52,35 +52,8 @@ class _ActivitiesListState extends State<ActivitiesList> {
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Container(
-            width: mqWidth(context, kIsWeb ? 3 : 5),
-            child: Column(
-              crossAxisAlignment: kIsWeb ? CrossAxisAlignment.center : CrossAxisAlignment.start,
-              children: [
-                VSpacing(kIsWeb ? 1: 0.5),
-                Container(
-                  width: mqWidth(context, kIsWeb ? 1: 3),
-                  height: mqWidth(context, kIsWeb ? 1 :3),
-                  decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    color: Color(0xffFFF09C)
-                  ),
-                ),
-                Container(
-                  width: mqWidth(context, 3),
-                  height: _listViewHeight != null ? _listViewHeight! - mqWidth(context, kIsWeb ? 0 : 4) : 0,
-                  child: Center(
-                    child: DottedLine(
-                      direction: Axis.vertical,
-                      lineThickness: 2,
-                      dashLength: 8.0,
-                      dashGapLength: 6.0,
-                      dashColor: Color(0xffDEE2E6),
-                    ),
-                  ),
-                ),
-              ],
-            ),
+          SideLine(
+            heigth: _listViewHeight,
           ),
           Container(
             width: mqWidth(context, kIsWeb ? 49 : 90),

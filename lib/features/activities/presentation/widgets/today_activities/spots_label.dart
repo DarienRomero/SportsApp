@@ -18,15 +18,15 @@ class SpotsLabel extends StatelessWidget {
     var isDarkMode = Theme.of(context).scaffoldBackgroundColor == Colors.black;
     return Container(
       padding: EdgeInsets.symmetric(
-        horizontal: mqWidth(context, 1.5)
+        horizontal: mqWidth(context, kIsWeb ? 0.8 : 1.5),
+        vertical: mqHeigth(context, kIsWeb ? 0.2 : 0)
       ),
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(5),
+        borderRadius: BorderRadius.circular(kIsWeb ? 2 : 5),
         color: isDarkMode ? Color(0xff6C757D) :Color(0xffF1F1F1)
       ),
       child: Row(
         children: [
-          HSpacing(kIsWeb ? 0.5 : 0),
           CustomSVGIcon(
             path: CustomIcons.userIcon, 
             sizePer: kIsWeb ? 1: 3,
