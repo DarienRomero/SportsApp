@@ -77,7 +77,7 @@ class ActivityCard extends StatelessWidget {
                       Row(
                         children: [
                           CustomSVGIcon(path: CustomIcons.mapPinIcon, sizePer: kIsWeb ? 1: 3),
-                          HSpacing(1),
+                          HSpacing(kIsWeb ? 0.5 : 1),
                           Text(activityEntity.location, style: Theme.of(context).textTheme.labelSmall?.copyWith(
                             color: Color(0xffADB5BD)
                           ))

@@ -57,7 +57,7 @@ class GoalCardWeb extends StatelessWidget {
                                 heigth: mqHeigth(context, 4),
                                 onPressed: (){}, 
                                 label: "Join now", 
-                                width: width * 0.24, 
+                                width: width * 0.22, 
                                 color: Colors.black,
                                 fontSize: 12,
                               ),
@@ -66,7 +66,7 @@ class GoalCardWeb extends StatelessWidget {
                                 heigth: mqHeigth(context, 4),
                                 onPressed: (){}, 
                                 label: "My points", 
-                                width: width * 0.24, 
+                                width: width * 0.22, 
                                 color: Colors.black,
                                 fontSize: 12
                               ),
@@ -76,7 +76,7 @@ class GoalCardWeb extends StatelessWidget {
                       ),
                     ),
                     CircularPercentIndicator(
-                      radius: width * 0.12,
+                      radius: width * 0.1,
                       lineWidth: 7.0,
                       percent: 0.7,
                       center: new Text("27", style: TextStyle(

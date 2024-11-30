@@ -30,11 +30,22 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
       padding: EdgeInsets.symmetric(
         horizontal: mqWidth(context, 7)
       ),
+      decoration: BoxDecoration(
+        color: Theme.of(context).scaffoldBackgroundColor,
+        boxShadow: !isDarkMode ? [
+          BoxShadow(
+            color: Color(0x1F000000),
+            offset: Offset(0, 0),
+            blurRadius: 7.6,
+            spreadRadius: 0,
+          ),
+        ] : null
+      ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           CustomIconButton(
-            size: 10,
+            size: 11,
             fillColor: Color(0),
             onPressed: (){
 
@@ -43,10 +54,11 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
             icon: CustomSVGIcon(
               path: CustomIcons.calendarIcon,
               color: Theme.of(context).iconTheme.color,
+              sizePer: 8,
             )
           ),
           CustomIconButton(
-            size: 10,
+            size: 11,
             fillColor: Color(0),
             onPressed: (){
 
@@ -55,6 +67,7 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
             icon: CustomSVGIcon(
               path: CustomIcons.mapIcon,
               color: Theme.of(context).iconTheme.color,
+              sizePer: 8,
             )
           ),
           CustomIconButton(
@@ -70,7 +83,7 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
             )
           ),
           CustomIconButton(
-            size: 10,
+            size: 11,
             fillColor: Color(0),
             onPressed: (){
 
@@ -79,10 +92,11 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
             icon: CustomSVGIcon(
               path: CustomIcons.usersIcon,
               color: Theme.of(context).iconTheme.color,
+              sizePer: 8,
             )
           ),
           CustomIconButton(
-            size: 10,
+            size: 11,
             fillColor: Color(0),
             onPressed: (){
 
@@ -91,6 +105,7 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
             icon: CustomSVGIcon(
               path: CustomIcons.starIcon,
               color: Theme.of(context).iconTheme.color,
+              sizePer: 7,
             )
           ),
         ],
